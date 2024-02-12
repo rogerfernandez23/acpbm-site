@@ -1,0 +1,60 @@
+h1 {
+    font-family: 'Changa One';
+    text-align: center;
+    font-size: 40px;
+    margin-top: 20px;
+  }
+  
+  .swiper-slide {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    height: 50%;
+    object-fit: cover;
+  }
+  
+  .swiper {
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 300px;
+    margin: 30px ;
+  }
+  .append-buttons {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .append-buttons button {
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #888b8e;
+    color: #3b3d3e;
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin: 0 10px;
+    font-size: 13px;
+  }
+
+  .swiper-pagination-fraction {
+    font-size: 0px;
+  }
+
+  .swiper-wrapper {
+    margin-top: -20px;
+  }
+
+  .swiper-button-prev:after {
+    color: rgb(35, 35, 35);
+  }
+
+  .swiper-button-next:after {
+    color: rgb(35, 35, 35);
+  }
+  
