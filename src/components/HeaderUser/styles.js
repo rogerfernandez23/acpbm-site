@@ -13,6 +13,13 @@ export const Header = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Changa One';
+    font-size: 16px;
+  }
+
   div {
     display: flex;
     flex-direction: row;
@@ -51,6 +58,7 @@ export const Header = styled.div`
       margin-top: 6px;
       font-size: 16px;
       font-weight: 100;
+      cursor: pointer;
     }
 
     .user-login {

@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/button-has-type */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/no-cycle */
 import PropTypes from 'prop-types';
@@ -7,12 +8,13 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import UploadImg from '../../../assets/upload_image.png';
+import { useUser } from '../../../hooks/UserContext';
 import api from '../../../services/api';
 import showMessage from '../../swalConfig';
 import {
   Container,
-  ContainerTotal,
   ContainerItens,
+  EditClub,
   Text,
   InputName,
   InputAbreviate,
@@ -22,20 +24,17 @@ import {
   Save
 } from './styles';
 
-function CreateClubMask({ onClose }) {
+function EditClubMask({ onClose, clubs }) {
   const [fileName, setFileName] = useState(null);
-  const { register, handleSubmit } = useForm();
   const [inputValue, setInputValue] = useState('');
+  const { userData } = useUser();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = async dataUser => {
     const formData = new FormData();
 
     if (dataUser.club_name) {
       formData.append('club_name', dataUser.club_name);
-    }
-
-    if (dataUser.club_user) {
-      formData.append('club_user', dataUser.club_user);
     }
 
     if (dataUser.abreviate_name) {
@@ -47,7 +46,7 @@ function CreateClubMask({ onClose }) {
     }
 
     try {
-      const response = await api.post('clubs', formData, {
+      const response = await api.put(`clubs/${userData.club_id}`, formData, {
         validateStatus: () => true
       });
 
@@ -77,60 +76,59 @@ function CreateClubMask({ onClose }) {
 
   return (
     <Container>
-      <ContainerTotal>
+      <ContainerItens>
+        <Text>EDITAR SEU CLUBE</Text>
+        <p className="sub">Você também pode editar apenas um dos campos</p>
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
-          <ContainerItens>
-            <Text>CRIAR NOVO CLUBE</Text>
+          <EditClub>
             <InputName
-              placeholder="Defina o nome do Clube"
               type="name"
               maxLength={30}
+              placeholder={clubs[0].club_name}
               {...register('club_name')}
-            />
-            <InputName
-              placeholder="Nome do Presidente"
-              type="name"
-              maxLength={30}
-              {...register('club_user')}
             />
             <InputAbreviate
               type="text"
               maxLength={3}
-              placeholder="Abreviação"
+              placeholder={clubs[0].abreviate_name}
               {...register('abreviate_name')}
               value={inputValue}
               onChange={inputUpperCase}
             />
-            <LabelImport>
-              {fileName || (
-                <>
-                  <img src={UploadImg} />
-                  Carregar novo escudo
-                </>
-              )}
+          </EditClub>
+          <LabelImport>
+            {fileName || (
+              <>
+                <img src={UploadImg} />
+                Carregar novo escudo
+              </>
+            )}
 
-              <input
-                type="file"
-                accept="image/png"
-                onChange={handleFileChange}
-                {...register('file')}
-              />
-            </LabelImport>
-            <Buttons>
-              <Cancel onClick={onClose}>CANCELAR</Cancel>
-              <Save type="submit" onClick={reload}>
-                SALVAR
-              </Save>
-            </Buttons>
-          </ContainerItens>
+            <input
+              type="file"
+              accept="image/png"
+              onChange={handleFileChange}
+              {...register('file')}
+            />
+          </LabelImport>
+          <Buttons>
+            <Cancel onClick={onClose}>CANCELAR</Cancel>
+            <Save type="submit" onClick={reload}>
+              SALVAR
+            </Save>
+          </Buttons>
         </form>
-      </ContainerTotal>
+      </ContainerItens>
     </Container>
   );
 }
 
-CreateClubMask.propTypes = {
+EditClubMask.propTypes = {
   onClose: PropTypes.func.isRequired
 };
 
-export default CreateClubMask;
+EditClubMask.propTypes = {
+  clubs: PropTypes.func.isRequired
+};
+
+export default EditClubMask;

@@ -29,20 +29,32 @@ export const ContainerTotal = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 30px;
   width: 40%;
-  height: 520px;
+  height: 490px;
   background-color: #eaeaea;
-  border-radius: 50px;
+  border-radius: 60px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const ContainerItens = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 20px;
+  width: 100%;
   border-radius: 75px;
   animation: ${fadeIn} 0.3s ease-out;
+
+  .image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Text = styled.p`
@@ -52,29 +64,11 @@ export const Text = styled.p`
   margin-bottom: 20px;
 `;
 
-export const SelectUser = styled.input`
-  width: 400px;
-  height: 40px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  background-color: white;
-  color: gray;
-  font-size: 12px;
-  padding-left: 10px;
-
-  &::placeholder {
-    font-size: 14px;
-    font-weight: 100;
-    color: black;
-    opacity: 0.6;
-  }
-`;
-
 export const InputName = styled.input`
   width: 400px;
   height: 40px;
   border-radius: 10px;
+  margin-bottom: 20px;
   border: none;
   outline: none;
   background-color: white;
@@ -94,6 +88,7 @@ export const InputAbreviate = styled.input`
   width: 400px;
   height: 40px;
   border-radius: 10px;
+  margin-bottom: 20px;
   border: none;
   outline: none;
   background-color: white;
@@ -108,18 +103,33 @@ export const InputAbreviate = styled.input`
     opacity: 0.6;
   }
 `;
-
-export const ImageImport = styled.input`
+export const LabelImport = styled.label`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   width: 300px;
   height: 130px;
   border-radius: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   border: none;
   outline: none;
   background-color: white;
   color: gray;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: 100;
   padding-left: 10px;
+  cursor: pointer;
+
+  img {
+    width: 15%;
+    opacity: 0.4;
+  }
+
+  input {
+    display: none;
+  }
 
   &::placeholder {
     font-size: 14px;

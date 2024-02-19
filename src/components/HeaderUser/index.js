@@ -1,3 +1,5 @@
+/* eslint-disable react/require-default-props */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/button-has-type */
 import PropTypes from 'prop-types';
@@ -10,7 +12,12 @@ import { useUser } from '../../hooks/UserContext';
 import { Container, Header } from './styles';
 
 function HeaderUser({ style }) {
-  const { userData } = useUser();
+  const { userData, logout } = useUser();
+
+  const deslog = () => {
+    logout();
+  };
+
   return (
     <Container style={style}>
       <Header>
@@ -18,18 +25,22 @@ function HeaderUser({ style }) {
           <img className="user-login" src={User} />
           <p>
             Olá, <br />
-            {userData.name}
+            {userData.admin ? 'Administrador' : userData.name}
           </p>
         </div>
         <div>
-          <button className="blue">
-            <img className="home" src={Home} />
-            HOME
-          </button>
-          <button className="gray">
-            <img className="logout" src={Logout} />
-            SAIR
-          </button>
+          <a href="/">
+            <button className="blue">
+              <img className="home" src={Home} />
+              HOME
+            </button>
+          </a>
+          <a href="/">
+            <button className="gray" onClick={deslog}>
+              <img className="logout" src={Logout} />
+              SAIR
+            </button>
+          </a>
         </div>
       </Header>
     </Container>
@@ -37,7 +48,7 @@ function HeaderUser({ style }) {
 }
 
 HeaderUser.propTypes = {
-  style: PropTypes.func.isRequired
+  style: PropTypes.objectOf(PropTypes.string)
 };
 
 export default HeaderUser;

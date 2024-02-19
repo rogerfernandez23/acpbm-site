@@ -17,24 +17,11 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: 0.99;
+  opacity: 0.98;
   z-index: 3;
   position: fixed;
   width: 100%;
   min-height: 120%;
-`;
-
-export const ContainerTotal = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 30px;
-  width: 40%;
-  height: 490px;
-  background-color: #eaeaea;
-  border-radius: 60px;
 `;
 
 export const ContainerItens = styled.div`
@@ -42,7 +29,9 @@ export const ContainerItens = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  width: 45%;
+  height: 420px;
+  background-color: #eaeaea;
   border-radius: 75px;
   animation: ${fadeIn} 0.3s ease-out;
 
@@ -52,50 +41,63 @@ export const ContainerItens = styled.div`
     align-items: center;
     justify-content: center;
   }
+
+  .sub {
+    color: #a5a5a5;
+    margin-top: 5px;
+    font-style: italic;
+    margin-bottom: 50px;
+  }
+`;
+
+export const EditClub = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
 `;
 
 export const Text = styled.p`
   font-size: 24px;
   font-family: 'Changa One';
   color: #a5a5a5;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 `;
 
 export const InputName = styled.input`
   width: 400px;
-  height: 40px;
-  border-radius: 10px;
+  height: 35px;
+  border-radius: 12px;
   border: none;
   outline: none;
   background-color: white;
-  color: gray;
-  font-size: 12px;
+  color: black;
+  font-size: 14px;
   padding-left: 10px;
 
   &::placeholder {
     font-size: 14px;
     font-weight: 100;
     color: black;
-    opacity: 0.6;
+    opacity: 0.4;
   }
 `;
 
 export const InputAbreviate = styled.input`
-  width: 400px;
-  height: 40px;
-  border-radius: 10px;
+  width: 120px;
+  height: 35px;
+  border-radius: 12px;
   border: none;
   outline: none;
   background-color: white;
-  color: gray;
-  font-size: 12px;
+  color: black;
+  font-size: 14px;
   padding-left: 10px;
 
   &::placeholder {
     font-size: 14px;
     font-weight: 100;
     color: black;
-    opacity: 0.6;
+    opacity: 0.4;
   }
 `;
 
@@ -108,7 +110,7 @@ export const LabelImport = styled.label`
   width: 300px;
   height: 130px;
   border-radius: 20px;
-  margin-top: 10px;
+  margin-top: 30px;
   border: none;
   outline: none;
   background-color: white;
@@ -139,7 +141,7 @@ export const Buttons = styled.div`
   display: flex;
   flex-direction: row;
   gap: 50px;
-  margin-top: 20px;
+  margin-top: 40px;
 `;
 
 export const Cancel = styled.button`

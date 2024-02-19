@@ -18,13 +18,30 @@ import {
   Save
 } from './styles';
 
-function DeleteClubMask({ onClose }) {
+function ManagerClubMask({ onClose }) {
   const [clubs, setClubs] = useState([]);
+  const [users, setUsers] = useState([]);
   const { handleSubmit, control } = useForm();
 
+  useEffect(() => {
+    const loadData = async () => {
+      const { data: responseClubs } = await api.get('clubs');
+      const { data: responseUsers } = await api.get('users');
+
+      setClubs(responseClubs);
+      setUsers(responseUsers);
+    };
+
+    loadData();
+  }, []);
+
   const onSubmit = async dataUser => {
+    const formData = new FormData();
+
+    formData.append('club_id', dataUser.club.id);
+
     try {
-      const response = await api.delete(`clubs/${dataUser.delete.id}`, {
+      const response = await api.put(`/club/${dataUser.user.id}`, formData, {
         validateStatus: () => true
       });
 
@@ -35,16 +52,6 @@ function DeleteClubMask({ onClose }) {
     }
   };
 
-  useEffect(() => {
-    const loadData = async () => {
-      const { data: responseClubs } = await api.get('clubs');
-
-      setClubs(responseClubs);
-    };
-
-    loadData();
-  }, []);
-
   const reload = () => {
     setTimeout(() => {
       window.location.reload();
@@ -54,11 +61,11 @@ function DeleteClubMask({ onClose }) {
   return (
     <Container>
       <ContainerTotal>
-        <Text>DELETAR CLUBE</Text>
-        <form noValidate onSubmit={handleSubmit(onSubmit)}>
-          <ContainerItens>
+        <ContainerItens>
+          <Text>GERENCIAR USUÁRIO</Text>
+          <form noValidate onSubmit={handleSubmit(onSubmit)}>
             <Controller
-              name="delete"
+              name="club"
               control={control}
               render={({ field }) => {
                 return (
@@ -80,21 +87,45 @@ function DeleteClubMask({ onClose }) {
                 );
               }}
             />
-          </ContainerItens>
-          <Buttons>
-            <Cancel onClick={onClose}>CANCELAR</Cancel>
-            <Save type="submit" onClick={reload}>
-              SALVAR
-            </Save>
-          </Buttons>
-        </form>
+            <Controller
+              name="user"
+              control={control}
+              render={({ field }) => {
+                return (
+                  <Select
+                    {...field}
+                    options={users}
+                    getOptionLabel={user => user.name}
+                    getOptionValue={user => user.id}
+                    placeholder="Defina o usuário deste clube"
+                    styles={{
+                      control: provided => ({
+                        ...provided,
+                        borderRadius: '14px',
+                        border: 'none'
+                      })
+                    }}
+                  />
+                );
+              }}
+            />
+            <Buttons>
+              <Cancel type="button" onClick={onClose}>
+                CANCELAR
+              </Cancel>
+              <Save type="submit" onClick={reload}>
+                SALVAR
+              </Save>
+            </Buttons>
+          </form>
+        </ContainerItens>
       </ContainerTotal>
     </Container>
   );
 }
 
-DeleteClubMask.propTypes = {
+ManagerClubMask.propTypes = {
   onClose: PropTypes.func.isRequired
 };
 
-export default DeleteClubMask;
+export default ManagerClubMask;

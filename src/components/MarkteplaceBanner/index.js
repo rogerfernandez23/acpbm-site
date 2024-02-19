@@ -2,6 +2,7 @@
 import React from 'react';
 
 import Logo from '../../assets/logo_banner.png';
+import { useNavigates } from '../../constants/navigates';
 import {
   Container,
   ContainerItens,
@@ -13,6 +14,7 @@ import {
 import TextSub from './Text';
 
 function Marketplace() {
+  const { toRegister } = useNavigates();
   return (
     <Container>
       <Header>
@@ -21,7 +23,7 @@ function Marketplace() {
       </Header>
       <ContainerItens>
         <TextSub />
-        <Button>CADASTRE-SE AGORA</Button>
+        <Button onClick={toRegister}>CADASTRE-SE AGORA</Button>
       </ContainerItens>
     </Container>
   );

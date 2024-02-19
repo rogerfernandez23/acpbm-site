@@ -42,6 +42,7 @@ export const Container = styled.div`
       color: inherit;
       font-size: 16px;
       font-weight: 100;
+      cursor: pointer;
     }
 
     ul {
@@ -129,11 +130,13 @@ export const LinksAcess = styled.div`
 
   .insta {
     width: 22px;
+    margin-top: 3px;
   }
 
   .youtube {
     width: 25px;
-    margin-right: 10px;
+    margin-right: 8px;
+    margin-top: 4px;
   }
 
   .login {
@@ -144,5 +147,19 @@ export const LinksAcess = styled.div`
     color: white;
     font-size: 14px;
     font-weight: 100;
+  }
+
+  .log {
+    &:hover {
+      color: grey;
+    }
+  }
+
+  .log-a {
+    text-decoration: none;
+  }
+
+  a {
+    color: white;
   }
 `;

@@ -17,11 +17,22 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: 0.98;
+  opacity: 0.99;
   z-index: 3;
   position: fixed;
   width: 100%;
   min-height: 120%;
+`;
+
+export const ContainerTotal = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 320px;
+  background-color: #eaeaea;
+  border-radius: 60px;
 `;
 
 export const ContainerItens = styled.div`
@@ -29,83 +40,55 @@ export const ContainerItens = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 45%;
-  height: 400px;
-  background-color: #eaeaea;
+  gap: 10px;
   border-radius: 75px;
   animation: ${fadeIn} 0.3s ease-out;
-`;
-
-export const EditClub = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
 `;
 
 export const Text = styled.p`
   font-size: 24px;
   font-family: 'Changa One';
   color: #a5a5a5;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 `;
 
-export const InputName = styled.input`
-  width: 400px;
-  height: 35px;
-  border-radius: 12px;
-  border: none;
-  outline: none;
-  background-color: white;
-  color: gray;
-  font-size: 12px;
-  padding-left: 10px;
+// export const SelectUser = styled.input`
+//   width: 400px;
+//   height: 40px;
+//   border-radius: 10px;
+//   border: none;
+//   outline: none;
+//   background-color: white;
+//   color: gray;
+//   font-size: 12px;
+//   padding-left: 10px;
 
-  &::placeholder {
-    font-size: 14px;
-    font-weight: 100;
-    color: black;
-    opacity: 0.6;
-  }
-`;
+//   &::placeholder {
+//     font-size: 14px;
+//     font-weight: 100;
+//     color: black;
+//     opacity: 0.6;
+//   }
+// `;
 
-export const InputAbreviate = styled.input`
-  width: 120px;
-  height: 35px;
-  border-radius: 12px;
-  border: none;
-  outline: none;
-  background-color: white;
-  color: gray;
-  font-size: 12px;
-  padding-left: 10px;
+// export const InputName = styled.input`
+//   width: 400px;
+//   height: 40px;
+//   border-radius: 10px;
+//   border: none;
+//   outline: none;
+//   background-color: white;
+//   color: gray;
+//   font-size: 12px;
+//   padding-left: 10px;
 
-  &::placeholder {
-    font-size: 14px;
-    font-weight: 100;
-    color: black;
-    opacity: 0.6;
-  }
-`;
-
-export const ImageImport = styled.input`
-  width: 300px;
-  height: 130px;
-  border-radius: 20px;
-  margin-top: 30px;
-  border: none;
-  outline: none;
-  background-color: white;
-  color: gray;
-  font-size: 12px;
-  padding-left: 10px;
-
-  &::placeholder {
-    font-size: 14px;
-    font-weight: 400;
-    text-align: center;
-    color: black;
-  }
-`;
+//   &::placeholder {
+//     font-size: 14px;
+//     font-weight: 100;
+//     color: black;
+//     opacity: 0.6;
+//   }
+// `;
 
 export const Buttons = styled.div`
   display: flex;

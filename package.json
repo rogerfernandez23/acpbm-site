@@ -18,6 +18,7 @@
     "react-player": "^2.14.1",
     "react-router-dom": "^6.21.3",
     "react-scripts": "5.0.1",
+    "react-select": "^5.8.0",
     "styled-components": "^6.1.8",
     "sweetalert2": "^11.10.5",
     "swiper": "^11.0.5",

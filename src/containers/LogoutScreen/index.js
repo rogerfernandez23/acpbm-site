@@ -1,18 +1,14 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import Logo from '../../assets/acpbm_logo.png';
 import Insta from '../../assets/insta_logo.png';
 import Yt from '../../assets/youtube_logo.png';
+import { useNavigates } from '../../constants/navigates';
 import { Container } from './styles';
 
 function LogoutScreen() {
-  const navigate = useNavigate();
-
-  const toHome = () => {
-    navigate('/');
-  };
+  const { toHome } = useNavigates();
 
   return (
     <Container>

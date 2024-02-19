@@ -3,10 +3,10 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 
 import Logo from '../../assets/logo_site.png';
+import { useNavigates } from '../../constants/navigates';
 import { useUser } from '../../hooks/UserContext';
 import api from '../../services/api';
 import {
@@ -26,16 +26,8 @@ import {
 import showMessage from './swalConfig';
 
 function Login() {
-  const navigate = useNavigate();
+  const { toUsers, toAdmin, toErrror } = useNavigates();
   const { putUserData } = useUser();
-
-  const toUsers = () => {
-    navigate('/usuario');
-  };
-
-  const toAdmin = () => {
-    navigate('/adm');
-  };
 
   const schema = yup.object().shape({
     email: yup.string().email('Digite um e-mail válido').required(' '),
@@ -74,11 +66,13 @@ function Login() {
           if (data.admin) {
             toAdmin();
             putUserData(data);
+          } else if (!data.club_id) {
+            toErrror();
           } else {
             toUsers();
             putUserData(data);
           }
-        }, 3000);
+        }, 2000);
       }
     } catch (err) {
       showMessage();

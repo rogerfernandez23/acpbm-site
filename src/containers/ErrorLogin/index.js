@@ -1,17 +1,13 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/button-has-type */
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import Caution from '../../assets/icon_erro.png';
+import { useNavigates } from '../../constants/navigates';
 import { Container } from './styles';
 
 function ErrorLogin() {
-  const navigate = useNavigate();
-
-  const click = () => {
-    navigate('/');
-  };
+  const { toHome } = useNavigates();
 
   return (
     <Container>
@@ -20,7 +16,7 @@ function ErrorLogin() {
         PARECE QUE SEU CADASTRO
         <br /> AINDA NÃO FOI VALIDADO
       </h1>
-      <button onClick={click}>VOLTAR A PÁGINA INICIAL</button>
+      <button onClick={toHome}>VOLTAR A PÁGINA INICIAL</button>
       <h2>AGUARDE AUTORIZAÇÃO</h2>
     </Container>
   );

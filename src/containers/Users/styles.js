@@ -15,16 +15,29 @@ export const EditClub = styled.div`
   margin-top: 6%;
   width: 90%;
   height: 400px;
-  padding: 40px 130px;
+  padding: 20px 80px;
   gap: 20px;
   border-radius: 50px;
   background-color: #eaeaea;
+
+  .box-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50%;
+    width: 20%;
+    height: 60%;
+  }
+
+  .box-name {
+    width: 60%;
+  }
 `;
 
 export const Image = styled.img`
   width: 150px;
-  border-radius: 50%;
-  background-color: white;
   cursor: pointer;
 
   &:hover {
@@ -33,14 +46,13 @@ export const Image = styled.img`
 `;
 
 export const NameClub = styled.p`
-  font-size: 75px;
+  font-size: 65px;
   font-weight: 700;
 `;
 
 export const EditButton = styled.button`
   width: 150px;
   height: 30px;
-  margin-left: 8%;
   border-radius: 12px;
   background-color: #7e7e7e;
   color: white;

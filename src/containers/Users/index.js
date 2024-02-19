@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+/* eslint-disable camelcase */
+import React, { useState, useEffect } from 'react';
 
-import LogoClub from '../../assets/image_icon.png';
 import HeaderUser from '../../components/HeaderUser';
-import EditClubMask from './Mask/editClubMask';
+import { useUser } from '../../hooks/UserContext';
+import api from '../../services/api';
+import EditClubMask from './EditClubUserMask/editClubMask';
 import {
   Container,
   EditClub,
@@ -14,21 +16,45 @@ import {
 
 function Users() {
   const [showEditMask, setShowEditMask] = useState(false);
+  const [clubs, setClubs] = useState([]);
+  const { userData } = useUser();
 
   const closeEditMask = () => {
     setShowEditMask(false);
   };
 
+  useEffect(() => {
+    const userInfos = async () => {
+      const { data } = await api.get('clubs');
+
+      const clubId = userData.club_id;
+      const clubData = data.filter(club => club.id === clubId);
+
+      setClubs(clubData);
+    };
+
+    userInfos();
+  }, [userData.club_id]);
+
   return (
     <Container>
       <HeaderUser />
       <EditClub>
-        <Image src={LogoClub} />
-        <NameClub>Nome do Clube</NameClub>
+        {clubs &&
+          clubs.map(club => (
+            <>
+              <div className="box-image">
+                <Image key={club.id} src={club.url} />
+              </div>
+              <div className="box-name">
+                <NameClub>{club.club_name}</NameClub>
+              </div>
+            </>
+          ))}
         <EditButton onClick={() => setShowEditMask(true)}>EDITAR</EditButton>
       </EditClub>
       <Text>Em breve, mais funcionalidades</Text>
-      {showEditMask && <EditClubMask onClose={closeEditMask} />}
+      {showEditMask && <EditClubMask clubs={clubs} onClose={closeEditMask} />}
     </Container>
   );
 }

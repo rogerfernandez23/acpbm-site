@@ -16,6 +16,12 @@ h1 {
     display: block;
     height: 50%;
     object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .swiper-slide img:hover {
+    transform: scale(1.1);
   }
   
   .swiper {
@@ -25,6 +31,7 @@ h1 {
     height: 300px;
     margin: 30px ;
   }
+
   .append-buttons {
     text-align: center;
     margin-top: 20px;
@@ -34,7 +41,7 @@ h1 {
     display: inline-block;
     cursor: pointer;
     border: 1px solid #888b8e;
-    color: #3b3d3e;
+    color: #3e3b3b;
     text-decoration: none;
     padding: 4px 10px;
     border-radius: 4px;

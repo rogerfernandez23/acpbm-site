@@ -33,14 +33,21 @@ export const ContainerTotal = styled.div`
   height: 250px;
   background-color: #eaeaea;
   border-radius: 40px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const ContainerItens = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   gap: 20px;
+  width: 100%;
   border-radius: 75px;
   animation: ${fadeIn} 0.3s ease-out;
 `;
@@ -50,83 +57,6 @@ export const Text = styled.p`
   font-family: 'Changa One';
   color: #a5a5a5;
   margin-bottom: 20px;
-`;
-
-export const SelectUser = styled.input`
-  width: 400px;
-  height: 40px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  background-color: white;
-  color: gray;
-  font-size: 12px;
-  padding-left: 10px;
-
-  &::placeholder {
-    font-size: 14px;
-    font-weight: 100;
-    color: black;
-    opacity: 0.6;
-  }
-`;
-
-export const InputName = styled.input`
-  width: 400px;
-  height: 40px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  background-color: white;
-  color: gray;
-  font-size: 12px;
-  padding-left: 10px;
-
-  &::placeholder {
-    font-size: 14px;
-    font-weight: 100;
-    color: black;
-    opacity: 0.6;
-  }
-`;
-
-export const InputAbreviate = styled.input`
-  width: 400px;
-  height: 40px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  background-color: white;
-  color: gray;
-  font-size: 12px;
-  padding-left: 10px;
-
-  &::placeholder {
-    font-size: 14px;
-    font-weight: 100;
-    color: black;
-    opacity: 0.6;
-  }
-`;
-
-export const ImageImport = styled.input`
-  width: 300px;
-  height: 130px;
-  border-radius: 20px;
-  margin-top: 20px;
-  border: none;
-  outline: none;
-  background-color: white;
-  color: gray;
-  font-size: 12px;
-  padding-left: 10px;
-
-  &::placeholder {
-    font-size: 14px;
-    font-weight: 400;
-    text-align: center;
-    color: black;
-  }
 `;
 
 export const Buttons = styled.div`

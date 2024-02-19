@@ -1,16 +1,13 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import Caution from '../../assets/manutencao_icon.jpg';
+import { useNavigates } from '../../constants/navigates';
 import { Container, ContainerItens } from './styles';
 
 function ScreenAlert() {
-  const navigate = useNavigate();
+  const { toHome } = useNavigates();
 
-  const toHome = () => {
-    navigate('/');
-  };
   return (
     <Container>
       <ContainerItens>
