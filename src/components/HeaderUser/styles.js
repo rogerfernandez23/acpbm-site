@@ -37,9 +37,10 @@ export const Header = styled.div`
       border: none;
       font-family: 'Changa One';
       cursor: pointer;
+      transition: transform 0.5s ease-in-out;
 
       &:hover {
-        opacity: 0.8;
+        transform: scale(1.05);
       }
     }
 

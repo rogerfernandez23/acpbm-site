@@ -39,6 +39,7 @@ export const TextRegister = styled.p`
   font-family: 'Changa One';
   font-size: 42px;
   font-style: none;
+  cursor: default;
 `;
 
 export const BackScreen = styled.div`
@@ -51,7 +52,7 @@ export const BackScreen = styled.div`
   cursor: pointer;
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 `;
 
@@ -114,7 +115,7 @@ export const Button = styled.button`
 
   &:hover {
     opacity: 0.9;
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 `;
 

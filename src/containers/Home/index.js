@@ -8,6 +8,7 @@ import Marketplace from '../../components/MarkteplaceBanner';
 import CarouselNotice from '../../components/NoticesCarroussel';
 import ScrollToTop from '../../components/ScrollToTop';
 import { Container } from './styles';
+import Video from './video';
 
 function Home() {
   return (
@@ -17,6 +18,16 @@ function Home() {
       <CarouselClub />
       <TroffiesCaroussel />
       <Marketplace />
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginBottom: '50px'
+        }}
+      >
+        <Video />
+      </div>
       <FooterComponent />
       <ScrollToTop />
     </Container>

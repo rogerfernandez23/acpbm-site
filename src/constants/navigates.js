@@ -1,8 +1,11 @@
 /* eslint-disable import/prefer-default-export */
 import { useNavigate } from 'react-router-dom';
 
+import { useUser } from '../hooks/UserContext';
+
 export function useNavigates() {
   const navigate = useNavigate();
+  const { logout } = useUser();
 
   const toHome = () => {
     navigate('/');
@@ -32,6 +35,11 @@ export function useNavigates() {
     navigate('/error');
   };
 
+  const toLogout = () => {
+    logout();
+    window.location.reload();
+  };
+
   return {
     toHome,
     toUsers,
@@ -39,6 +47,7 @@ export function useNavigates() {
     toFrezze,
     toRegister,
     toLogin,
-    toErrror
+    toErrror,
+    toLogout
   };
 }

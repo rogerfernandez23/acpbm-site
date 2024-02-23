@@ -54,6 +54,12 @@ export const ContainerLogin = styled.div`
 export const Image = styled.img`
   width: 280px;
   margin-top: -40px;
+  cursor: pointer;
+  transition: transform 0.8s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 export const Input = styled.input`
@@ -84,6 +90,7 @@ export const Register = styled.a`
   color: #ffff;
   margin-right: 110px;
   margin-top: 14px;
+  cursor: default;
 `;
 
 export const Form = styled.a`
@@ -102,9 +109,11 @@ export const Button = styled.button`
   color: white;
   font-family: 'Changa One';
   cursor: pointer;
+  transition: transform 0.5s ease-in-out;
 
   &:hover {
-    opacity: 0.6;
+    opacity: 0.9;
+    transform: scale(1.02);
   }
 `;
 
@@ -112,12 +121,14 @@ export const LabelOneInner = styled.p`
   color: white;
   font-family: 'Changa One';
   font-size: 40px;
+  cursor: default;
 `;
 
 export const LabelOne = styled.p`
   color: white;
   font-family: 'Changa One';
   font-size: 80px;
+  cursor: default;
 `;
 
 export const LabelTwo = styled.p`
@@ -127,6 +138,7 @@ export const LabelTwo = styled.p`
   font-size: 16px;
   font-weight: 100;
   margin-top: 5px;
+  cursor: default;
 `;
 
 export const ErrorText = styled.p`

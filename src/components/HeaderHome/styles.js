@@ -149,6 +149,26 @@ export const LinksAcess = styled.div`
     font-weight: 100;
   }
 
+  .button-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin-top: 4px;
+    width: 30%;
+    height: 15px;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
   .log {
     &:hover {
       color: grey;

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/button-has-type */
@@ -23,7 +24,7 @@ function HeaderHome() {
   const [menuOn, setMenuOn] = useState(false);
   const menuRef = useRef();
   const { userData } = useUser();
-  const { toFrezze } = useNavigates();
+  const { toFrezze, toLogout } = useNavigates();
 
   const idHeader = () => {
     if (userData.name) {
@@ -35,6 +36,9 @@ function HeaderHome() {
               Acesse seu perfil
             </p>
           </a>
+          <button className="button-header" onClick={toLogout}>
+            Sair
+          </button>
         </>
       );
     }
@@ -131,15 +135,17 @@ function HeaderHome() {
         </ul>
       </nav>
       <Logo>
-        <img
-          className="logo-acpbm"
-          src={LogoFed}
-          alt="logo-federacao"
-          title="Federação ACPBM"
-        />
+        <a href="/">
+          <img
+            className="logo-acpbm"
+            src={LogoFed}
+            alt="logo-federacao"
+            title="Federação ACPBM"
+          />
+        </a>
       </Logo>
       <LinksAcess>
-        <a href="https://www.instagram.com/facpbm/">
+        <a href="https://www.instagram.com/facpbm/" target="blank">
           <img
             className="insta"
             src={Insta}
@@ -147,7 +153,7 @@ function HeaderHome() {
             title="Ir ao Instagram"
           />
         </a>
-        <a href="https://www.youtube.com/@federacaoacpbm6936">
+        <a href="https://www.youtube.com/@federacaoacpbm6936" target="blank">
           <img
             className="youtube"
             src={Youtube}

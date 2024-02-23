@@ -9,7 +9,8 @@ function Text() {
         fontSize: '20px',
         fontStyle: 'italic',
         textAlign: 'justify',
-        marginLeft: '50px'
+        marginLeft: '50px',
+        cursor: 'default'
       }}
     >
       Tenha acesso ao mundo de ligas, copas e demais interações junto aos mais

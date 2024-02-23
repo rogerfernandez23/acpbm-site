@@ -12,20 +12,41 @@ import NoticeRead from '../containers/NoticeRead';
 import Register from '../containers/Register';
 import ScreenAlert from '../containers/ScreenAlert';
 import Users from '../containers/Users';
+import RoutePrivate from './privateRoutes';
 
 function AppRoutes() {
   return (
     <Router>
       <Routes>
+        {/* ROUTES FREE */}
+
+        <Route path={paths.Error} element={<ErrorLogin />} />
         <Route exact path={paths.Home} element={<Home />} />
         <Route path={paths.Login} element={<Login />} />
         <Route path={paths.Register} element={<Register />} />
         <Route path={paths.Logout} element={<LogoutScreen />} />
         <Route path={paths.Alert} element={<ScreenAlert />} />
-        <Route path={paths.Users} element={<Users />} />
-        <Route path={paths.Error} element={<ErrorLogin />} />
-        <Route path={paths.Admin} element={<Admin />} />
         <Route path={paths.Notice} element={<NoticeRead />} />
+
+        {/* ROUTES LOGS */}
+
+        <Route
+          path={paths.Users}
+          element={
+            <RoutePrivate isUser>
+              <Users />
+            </RoutePrivate>
+          }
+          isUser
+        />
+        <Route
+          path={paths.Admin}
+          element={
+            <RoutePrivate isAdmin>
+              <Admin />
+            </RoutePrivate>
+          }
+        />
       </Routes>
     </Router>
   );
