@@ -23,6 +23,21 @@ function ManagerClubMask({ onClose }) {
   const [users, setUsers] = useState([]);
   const { handleSubmit, control } = useForm();
 
+  const onSubmit = async dataUser => {
+    const sendForm = { club_id: dataUser.club.id };
+
+    try {
+      const response = await api.put(`club/${dataUser.user.id}`, sendForm, {
+        validateStatus: () => true
+      });
+
+      const { status } = response;
+      showMessage(status);
+    } catch (err) {
+      showMessage();
+    }
+  };
+
   useEffect(() => {
     const loadData = async () => {
       const { data: responseClubs } = await api.get('clubs');
@@ -34,23 +49,6 @@ function ManagerClubMask({ onClose }) {
 
     loadData();
   }, []);
-
-  const onSubmit = async dataUser => {
-    const formData = new FormData();
-
-    formData.append('club_id', dataUser.club.id);
-
-    try {
-      const response = await api.put(`/club/${dataUser.user.id}`, formData, {
-        validateStatus: () => true
-      });
-
-      const { status } = response;
-      showMessage(status);
-    } catch (err) {
-      showMessage();
-    }
-  };
 
   const reload = () => {
     setTimeout(() => {
