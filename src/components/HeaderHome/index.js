@@ -78,15 +78,16 @@ function HeaderHome() {
 
   return (
     <Container scrolled={scrolled}>
-      <DropHeader
-        className="menu-container"
-        onClick={() => {
-          setMenuOn(!menuOn);
-        }}
-      >
-        <img className="menu-image" src={Menu} alt="menu-side" />
+      <DropHeader className="menu-container" ref={menuRef}>
+        <div
+          onClick={() => {
+            setMenuOn(!menuOn);
+          }}
+        >
+          <img className="menu-image" src={Menu} alt="menu-side" />
+        </div>
       </DropHeader>
-      <nav className={`menu ${menuOn ? 'active' : 'inactive'}`} ref={menuRef}>
+      <nav className={`menu ${menuOn ? 'active' : 'inactive'}`}>
         <ul>
           <li>
             <div>
