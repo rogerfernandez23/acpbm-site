@@ -1,70 +1,116 @@
-# Site da FEDERAÇÃO ACPBM
+<p  align="center">
+  <img width="250px" src="https://raw.githubusercontent.com/gist/rogerfernandez23/eefdd7a8cfc082c4a6a62ca0c991834a/raw/25eda0a493ccd4925d061e4d91b663e309cf08e4/facpbm.svg" alt="logo-projeto"/>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">FEDERAÇÃO ACPBM - SITE</h1>
+<p align="center">Um site que gerência notícias, informações, campeonatos e clubes de maneira prática e objetiva</p>
 
-## Available Scripts
+<p  align="center">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/rogerfernandez23/acpbm-site?display_timestamp=author&style=for-the-badge">&nbsp;
+  <img alt="GitHub License" src="https://img.shields.io/github/license/rogerfernandez23/acpbm-site?style=for-the-badge">
+</p>
 
-In the project directory, you can run:
+<p align="center">
+ <a href="#features">Features</a> •
+ <a href="#deploy">Deploy</a> • 
+ <a href="#tecnologias">Tecnologias</a> • 
+ <a href="#instalacao">Instalação</a> • 
+ <a href="#autor">Autor</a> • 
+</p>
 
-### `npm start`
+ <br /><h4 align="center"> 
+	🚧  Projeto ainda em Desenvolvimento 🚀  🚧
+</h4>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ <br /><h2 id="features">Features</h2>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [x] Login/Cadastro de Usuários
+- [x] Autenticação com token JWT
+- [x] Acesso restrito ao Administrador
+- [x] Criação, Edição e Deleção de equipes
+- [x] Gerenciamento de usuários
+- [x] Tela de edição usuário
+- [ ] Reset de senha de acesso (em breve ⏳)
+- [ ] Aprovação/reprovação de novos usuários (em breve ⏳)
+- [ ] Aba de Campeonatos (em breve ⏳)
+- [ ] Gerenciador e criador de Campeonatos (em breve ⏳)
+- [ ] Integração ao Marketplace (em breve ⏳)
 
-### `npm test`
+ <br /><h2 id="deploy">Deploy</h2>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ <br /><h2 id="tecnologias">Tecnologias</h2>
 
-### `npm run build`
+Utilizei estas ferramentas para o desenvolvimento do projeto:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [JavaScript](https://devdocs.io/javascript/)
+- [React](https://pt-br.reactjs.org/)
+- [Context API](https://legacy.reactjs.org/docs/context.html)
+- [React Carrousel](https://www.npmjs.com/package/react-elastic-carousel)
+- [Node.js](https://nodejs.org/en/)
+- [Express.js](https://expressjs.com/)
+- [Axios](https://axios-http.com/docs/intro)
+- [Yup](https://www.npmjs.com/package/yup)
+- [Styled Components](https://www.styled-components.com/)
+- [JWT Auth](https://jwt.io/)
+- [Swal Alert](https://sweetalert2.github.io/)
+- [React-Hook-Form](https://react-hook-form.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ <br /><h2 id="instalacao">Instalação</h2>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🎲 Rodando o Front-End
 
-### `npm run eject`
+```bash
+# Clone este repositório
+$ git clone <https://github.com/rogerfernandez23/acpbm-site>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Acesse a pasta do projeto no terminal/cmd
+$ cd acpbm-site
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Vá para a pasta server
+$ cd server
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Instale as dependências
+$ yarn install 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Execute a aplicação em modo de desenvolvimento
+$ yarn start
 
-## Learn More
+# O servidor inciará na porta:3000 - acesse <http://localhost:3000>
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 🎲 Rodando o Back-End
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+# Clone o repositório
+$ git clone <https://github.com/rogerfernandez23/acpbm-site-backend>
 
-### Code Splitting
+# Acesse a pasta do projeto no terminal/cmd
+$ cd acpbm-site-backend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Vá para a pasta server
+$ cd server
 
-### Analyzing the Bundle Size
+# Instale as dependências
+$ yarn install 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Execute a aplicação em modo de desenvolvimento
+$ yarn dev
 
-### Making a Progressive Web App
+# O servidor inciará na porta:8080 - acesse <http://localhost:8080>
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+ <br /><h2 id="autor">Autor</h2>
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/135080702?v=4" width="100px;" alt="foto-autor"/>
+ <p>Projetado e desenvolvido por <b>Rogério Fernandes 🐙</b></p>
 
-### Advanced Configuration
+<a href="https://www.linkedin.com/in/roger-fernandez22/" target="_blank"><img  width="28px;" src="https://raw.githubusercontent.com/gist/rogerfernandez23/877f716e9a0e5a9e295c04e43e982181/raw/a2e2df4cee96397536d5116c57935ec81d809294/linkedincard.svg" alt="linkedin"></a>
+<a href="https://www.instagram.com/rogerfernandez_" target="_blank"><img width="30px;" src="https://raw.githubusercontent.com/gist/rogerfernandez23/6862b94f7227b9d19fc4d30cfdd6c115/raw/47884127e0d2f1bb2831a2065bd5cc228dc2b4e9/instacard.svg" alt="instagram"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
