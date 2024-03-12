@@ -4,7 +4,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { Notice, Text } from './styles';
+import { Notice, Text, SubText } from './styles';
 
 export function Notices({ children }) {
   return <Notice>{children}</Notice>;
@@ -14,6 +14,14 @@ export function TextNotice({ children }) {
   return <Text>{children}</Text>;
 }
 
+export function TextSub({ children }) {
+  return <SubText>{children}</SubText>;
+}
+
+// export function ImageNotice({ children }) {
+//   return <Image>{children}</Image>;
+// }
+
 Notices.propTypes = {
   children: PropTypes.string
 };
@@ -21,3 +29,11 @@ Notices.propTypes = {
 TextNotice.propTypes = {
   children: PropTypes.string
 };
+
+TextSub.propTypes = {
+  children: PropTypes.string
+};
+
+// ImageNotice.propTypes = {
+//   children: PropTypes.object
+// };

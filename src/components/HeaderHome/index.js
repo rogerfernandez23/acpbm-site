@@ -86,55 +86,55 @@ function HeaderHome() {
         >
           <img className="menu-image" src={Menu} alt="menu-side" />
         </div>
-      </DropHeader>
-      <nav className={`menu ${menuOn ? 'active' : 'inactive'}`}>
-        <ul>
-          <li>
-            <div>
+        <nav className={`menu ${menuOn ? 'active' : 'inactive'}`}>
+          <ul>
+            <li>
+              <div>
+                <img
+                  style={{ width: '22px', marginLeft: '2px' }}
+                  src={Trophies}
+                  alt="campeonatos"
+                />
+              </div>
+              <a style={{ marginTop: '5px' }} onClick={toFrezze}>
+                CAMPEONATOS
+              </a>
+            </li>
+            <li>
               <img
-                style={{ width: '22px', marginLeft: '2px' }}
-                src={Trophies}
-                alt="campeonatos"
+                style={{ width: '18px', marginLeft: '4px' }}
+                src={Clubs}
+                alt="clubes"
               />
-            </div>
-            <a style={{ marginTop: '5px' }} onClick={toFrezze}>
-              CAMPEONATOS
-            </a>
-          </li>
-          <li>
-            <img
-              style={{ width: '18px', marginLeft: '4px' }}
-              src={Clubs}
-              alt="clubes"
-            />
-            <a onClick={toFrezze}>CLUBES</a>
-          </li>
-          <li>
-            <img
-              style={{ width: '20px', marginLeft: '4px' }}
-              src={Rules}
-              alt="regulamento"
-            />
-            <a onClick={toFrezze}>REGULAMENTO</a>
-          </li>
-          <li>
-            <img
-              style={{ width: '18px', marginLeft: '6px' }}
-              src={Calendar}
-              alt="calendario"
-            />
-            <a onClick={toFrezze}>CALENDÁRIO</a>
-          </li>
-          <li>
-            <img
-              style={{ width: '24px', marginLeft: '4px' }}
-              src={Market}
-              alt="marketplace"
-            />
-            <a onClick={toFrezze}>MARKETPLACE</a>
-          </li>
-        </ul>
-      </nav>
+              <a onClick={toFrezze}>CLUBES</a>
+            </li>
+            <li>
+              <img
+                style={{ width: '20px', marginLeft: '4px' }}
+                src={Rules}
+                alt="regulamento"
+              />
+              <a onClick={toFrezze}>REGULAMENTO</a>
+            </li>
+            <li>
+              <img
+                style={{ width: '18px', marginLeft: '6px' }}
+                src={Calendar}
+                alt="calendario"
+              />
+              <a onClick={toFrezze}>CALENDÁRIO</a>
+            </li>
+            <li>
+              <img
+                style={{ width: '24px', marginLeft: '4px' }}
+                src={Market}
+                alt="marketplace"
+              />
+              <a onClick={toFrezze}>MARKETPLACE</a>
+            </li>
+          </ul>
+        </nav>
+      </DropHeader>
       <Logo>
         <a href="/">
           <img

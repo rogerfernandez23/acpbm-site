@@ -8,6 +8,14 @@ export const Container = styled.div`
   .container-notice {
     display: flex;
     flex-direction: column;
+    align-items: center;
+  }
+
+  .container-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
   }
 `;
 

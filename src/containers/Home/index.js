@@ -1,5 +1,6 @@
 import React from 'react';
 
+import MarketImg from '../../assets/marketplace_acpbm_site.jpg';
 import TroffiesCaroussel from '../../components/CampeonatosCaroussel';
 import CarouselClub from '../../components/ClubsCaroussel';
 import FooterComponent from '../../components/FooterComponent';
@@ -7,6 +8,7 @@ import HeaderHome from '../../components/HeaderHome';
 import Marketplace from '../../components/MarkteplaceBanner';
 import CarouselNotice from '../../components/NoticesCarroussel';
 import ScrollToTop from '../../components/ScrollToTop';
+import Credits from '../../credits';
 import { Container } from './styles';
 import Video from './video';
 
@@ -17,19 +19,16 @@ function Home() {
       <CarouselNotice />
       <CarouselClub />
       <TroffiesCaroussel />
+      <div className="divs-home">
+        <img src={MarketImg} alt="marketplace" className="banner-market" />
+      </div>
       <Marketplace />
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginBottom: '50px'
-        }}
-      >
+      <div className="divs-home">
         <Video />
       </div>
       <FooterComponent />
       <ScrollToTop />
+      <Credits />
     </Container>
   );
 }
