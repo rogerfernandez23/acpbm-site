@@ -3,26 +3,24 @@ import styled from 'styled-components';
 
 export const Notice = styled.h1`
   font-size: 62px;
-  padding: 0px 80px;
-  margin-top: 100px;
-  margin-bottom: 10px;
   color: black;
+  text-align: center;
 `;
 
-export const SubText = styled.p`
-  font-size: 16px;
+export const SubText = styled.h1`
+  font-size: 18px;
+  font-family: 'Roboto';
   font-style: italic;
-  padding: 0px 80px;
-  margin-bottom: 80px;
   color: black;
 `;
 
 export const Text = styled.p`
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 400;
   text-align: justify;
-  padding: 0px 80px;
-  margin-bottom: 100px;
   color: black;
+  width: 60%;
+  margin: 80px 0;
 `;
 
 // export const Image = styled.img`

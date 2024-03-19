@@ -16,6 +16,7 @@ import Rules from '../../assets/rules.png';
 import Trophies from '../../assets/trophie.png';
 import Youtube from '../../assets/youtube_logo.png';
 import { useNavigates } from '../../constants/navigates';
+import Doc from '../../docs/regulamento.pdf';
 import { useUser } from '../../hooks/UserContext';
 import { Container, DropHeader, Logo, LinksAcess } from './styles';
 
@@ -114,7 +115,9 @@ function HeaderHome() {
                 src={Rules}
                 alt="regulamento"
               />
-              <a onClick={toFrezze}>REGULAMENTO</a>
+              <a href={Doc} download="regulamento.pdf">
+                REGULAMENTO
+              </a>
             </li>
             <li>
               <img
