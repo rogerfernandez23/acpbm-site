@@ -181,5 +181,6 @@ export const LinksAcess = styled.div`
 
   a {
     color: white;
+    text-decoration: underline;
   }
 `;
