@@ -25,7 +25,7 @@ function HeaderHome() {
   const [menuOn, setMenuOn] = useState(false);
   const menuRef = useRef();
   const { userData } = useUser();
-  const { toFrezze, toLogout } = useNavigates();
+  const { toLogin, toRegister, toFrezze, toLogout } = useNavigates();
 
   const idHeader = () => {
     if (userData.name) {
@@ -45,8 +45,8 @@ function HeaderHome() {
     }
     return (
       <p>
-        Faça <a href="https://facpbm.netlify.app/login">Login</a> <br /> ou{' '}
-        <a href="https://facpbm.netlify.app/cadastro">Cadastre-se</a>
+        Faça <a onClick={toLogin}>Login</a> <br /> ou{' '}
+        <a onClick={toRegister}>Cadastre-se</a>
       </p>
     );
   };
