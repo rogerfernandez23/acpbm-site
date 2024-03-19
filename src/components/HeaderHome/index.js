@@ -45,8 +45,8 @@ function HeaderHome() {
     }
     return (
       <p>
-        Faça <a href="/login">Login</a> <br /> ou{' '}
-        <a href="/cadastro">Cadastre-se</a>
+        Faça <a href="https://facpbm.netlify.app/login">Login</a> <br /> ou{' '}
+        <a href="https://facpbm.netlify.app/cadastro">Cadastre-se</a>
       </p>
     );
   };
