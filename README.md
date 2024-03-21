@@ -1,5 +1,5 @@
-<p  align="center">
-  <img width="250px" src="https://raw.githubusercontent.com/gist/rogerfernandez23/eefdd7a8cfc082c4a6a62ca0c991834a/raw/25eda0a493ccd4925d061e4d91b663e309cf08e4/facpbm.svg" alt="logo-projeto"/>
+<p align="center">	
+  <a href="https://facpbm.netlify.app/"><img width="80%" src="https://rogeriofernandes.netlify.app/static/media/model.3fcb9ac8740c1bdb858b.jpg" alt="logo-deploy"/></a>
 </p>
 
 <h1 align="center">FEDERAÇÃO ACPBM - SITE 🖥️</h1>
@@ -74,14 +74,20 @@ att. Roger Fernandes
 
  <br /><h2 id="deploy">Deploy 🔐</h2>
  
-<p align="center">	
-  <a href="https://facpbm.netlify.app/"><img width="600px" src="https://rogeriofernandes.netlify.app/static/media/model.3fcb9ac8740c1bdb858b.jpg" alt="logo-deploy"/></a>
-</p>
-<p align="center">
-  <a href="https://facpbm.netlify.app/">Veja o projeto aqui</a>
-</p>
+ <a href="https://facpbm.netlify.app/">Veja o projeto aqui</a>
 
- <br /><h2 id="tecnologias">Tecnologias 📚</h2>
+ <h3>Acessos para testes:</h3>
+
+<p>
+Administrador:<br/>
+Login - <b>admteste@login.com</b><br/>
+Senha - <b>testeadmin</b><br/>
+
+Usuário:<br/>
+Login - <b>usuarioteste@login.com</b><br/>
+Senha - <b>testeusuario</b><br/>
+</p>
+  <br /><h2 id="tecnologias">Tecnologias 📚</h2>
 
 Utilizei estas ferramentas para o desenvolvimento do projeto:
 
