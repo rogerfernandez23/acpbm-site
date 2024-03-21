@@ -19,22 +19,29 @@
 </p>
 
  <br /><h4 align="center"> 
-	🚧  Projeto ainda em Desenvolvimento  🚧
+	🚧  <i>Projeto ainda em Desenvolvimento</i>  🚧
 </h4>
 
  <br /><h2>Sobre o Projeto</h2>
 
 <p align="justify">
-Este projeto foi desenvolvido no padrão MVC de arquitetura com foco em boas práticas de desenvolvimento de maneira que permite o crescimento e implantação escalável de novas funcionalidades, buscando ao máximo 
-uma melhor experiência do usuário.
-	
-Dentro de suas funcionalidades, a ferramenta permite o cadastro e gerenciamento de contas pessoais com autenticação no ambiente frontend (utilizando o [React-Hook-Form](https://react-hook-form.com/)) e no backend (utilizando o [Yup](https://www.npmjs.com/package/yup)) 
-diminuindo ao máximo a incidência de erros ou tentativas maliciosas. O tratamento e armazenamento de dados dos usuários é feito com o banco relacional [PostgreSQL](https://www.postgresql.org/) em conexão com o
-[Sequelize](https://sequelize.org/) que envia os dados validados salvado um hash de senha (criptografada) do usuário através do [Bcrypt](https://www.npmjs.com/package/bcrypt).
+Este projeto foi desenvolvido seguindo o padrão de arquitetura <b>MVC</b>, com foco em boas práticas de desenvolvimento, possibilitando o crescimento e implantação escalável de novas funcionalidades. O objetivo principal é proporcionar uma melhor experiência ao usuário. Ao adotar o MVC, o código está estruturado de forma organizada, com a separação clara de responsabilidades entre <b>Model</b>, <b>View</b> (frontend) e <b>Controller</b>. Isso facilita a manutenção do código, permitindo a adição de novos recursos de forma eficiente e minimizando o impacto em outras partes do sistema. Dessa forma, o projeto está preparado para evoluir ao longo do tempo, adaptando-se às necessidades dos usuários e futuras ideias que pretendo adicionar, proporcionando uma experiência cada vez mais satisfatória.
 
-A permissão para acesso do usuário à sua conta depende inicialmente do cadastro de uma equipe única por parte dos administradores da página. Mesmo que esteja logado, a lógica de rotas privadas impede o acesso
-ao verificar que o cadastro ainda não foi realizado. O mesmo se aplica aos usuários não "admin", que não conseguem acessar a pagina admin sendo que a conta admin, não acessa dados na rota de perfil de usuário.
-E por último, a utilização do [JWT Token](https://jwt.io/), impede que não cadastrados, tenham acesso a quaisquer páginas que necessitam de login na ferramenta.
+Dentro de suas funcionalidades, a ferramenta permite o cadastro e gerenciamento de contas pessoais com autenticação tanto no ambiente frontend (utilizando o [React-Hook-Form](https://react-hook-form.com/)), quanto no backend (utilizando o [Yup](https://www.npmjs.com/package/yup)), reduzindo a incidência de erros ou tentativas de login maliciosas. A escolha dessas ferramentas visa a segurança e a facilidade de uso para os usuários. O tratamento e armazenamento de dados dos usuários são realizados em um banco de dados relacional, utilizando o [PostgreSQL](https://www.postgresql.org/), em conexão com o [Sequelize](https://sequelize.org/). Essa combinação proporciona uma estrutura sólida e confiável para a manipulação de dados, fornecendo uma camada de abstração poderosa e fácil de usar sobre o SQL tradicional.
+Para garantir a segurança das informações dos usuários, as senhas são armazenadas de forma criptografada. O [Bcrypt](https://www.npmjs.com/package/bcrypt) é utilizado para gerar hashes de senha, o que dificulta a sua decodificação em caso de acesso não autorizado ao banco de dados. Como parte da experiência do navegação, ao se cadastrar com sucesso, o usuário recebe automaticamente um e-mail de boas-vindas. Esse processo é automatizado utilizando [Python](https://www.python.org/), garantindo uma comunicação eficaz e personalizada com os novos usuários.
+
+A permissão para o acesso do usuário so seu perfil fica pendente inicialmente após o cadastro. É necessário a associação de uma equipe aos seus dados por parte dos administradores da página. Mesmo que esteja logado, a lógica implementada de rotas privadas verifica se tal cadastro de sua equipe foi localizada ou não, para assim redirecioná-lo a seu perfil. Da mesma forma, os usuários que <b>não</b> são "admin", não conseguem acessar a página de administração, enquanto os administradores não têm acesso a página de perfil de usuário <b>único</b>. Essa abordagem garante a segurança e a integridade dos dados, mantendo a separação adequada de funções e permissões. Além disso, a utilização do [JWT Token](https://jwt.io/) é fundamental para garantir que apenas usuários autenticados tenham acesso às páginas que exigem login na ferramenta. O JWT fornece uma maneira segura de transmitir informações de autenticação entre o cliente e o servidor, evitando que usuários não cadastrados acessem recursos protegidos.
+
+No seu perfil pessoal, o usuário pode editar sua equipe cadastrada, alterando o nome e o logotipo do escudo. Os Administradores, além de gerenciar todos os usuários e suas equipes, têm permissão para criar, editar e excluir clubes registrados. As informações são requisitadas ao banco de dados e disponibilizadas nestas páginas. Além disso, a implementação do [Context API](https://legacy.reactjs.org/docs/context.html) oferece uma forma eficiente e organizada de compartilhar estados e dados entre os componentes da aplicação, garantindo uma experiência consistente para o usuário em todas as partes do sistema.
+
+Na tela inicial, disponível para todos os visitantes, são apresentadas informações de notícias que podem ser acessadas e lidas, além de carrosséis com composição de clubes e campeonatos. Esses elementos proporcionam uma visão abrangente das atividades e eventos da federação, permitindo que os usuários se mantenham atualizados sobre as últimas novidades e acontecimentos. Em breve, farei adições que contribuirão para uma melhor navegação e experiência de qualquer pessoa não cadastrada que esteja interessada em saber mais sobre a federação. Essas futuras adições podem ser visualizadas nas <a href="#features">Features</a>.
+
+Sobre os estilos visuais, optei predominantemente pelo uso do [Styled Components](https://www.styled-components.com/). Porém, fiz algumas pequenas adições com [Bootstrap](https://getbootstrap.com/) em um dos carrosséis, aproveitando seus recursos de layout responsivo e componentes predefinidos para uma experiência visual mais consistente. Para fornecer feedback ao usuário de uma forma visualmente atraente e interativa fiz uso do [Swal Alert](https://sweetalert2.github.io/) Os demais conteúdos visuais (logotipos e vídeos), produzi utilizando ferramentas como o Adobe [Photoshop](https://www.adobe.com/products/photoshop.html) e [Illustrator](https://www.adobe.com/products/illustrator.html). Essas ferramentas oferecem recursos avançados para a criação e edição de elementos gráficos, garantindo uma apresentação visualmente mais atraente e profissional em toda a plataforma, além de promover uma identidade visual forte e reconhecível.
+
+<b><i>Estou entusiasmado em continuar trabalhando para fornecer mais funcionalidades e aprimorar ainda mais meus conhecimentos. Este projeto é uma oportunidade para explorar novas tecnologias, desenvolver minhas habilidades e contribuir para uma experiência do usuário ainda melhor. Além disso, estou comprometido em buscar constantemente melhorias no desempenho, segurança e usabilidade. Isso inclui aprender com feedbacks dos usuários, estudar as últimas tendências e implementar as melhores práticas. Estou confiante de que as futuras adições e aprimoramentos tornarão esta plataforma ainda mais valiosa e impactante.
+
+att. Roger Fernandes
+</i></b>
 </p>
  
  <br /><h2 id="features">Features 🔄</h2>
@@ -42,18 +49,26 @@ E por último, a utilização do [JWT Token](https://jwt.io/), impede que não c
 <h3>Implementadas ✔️</h3>
 
 ✅ Login/Cadastro de Usuários<br />
+✅ Validação de dados no Login/Cadastro<br />
 ✅ Autenticação com token JWT<br />
-✅ Acesso restrito ao Administrador<br />
-✅ Criação, Edição e Deleção de equipes<br />
+✅ Acesso restrito por hierarquia<br />
+✅ Criação, Visualização, Edição e Deleção de equipes<br />
+✅ Upload de imagens<br />
 ✅ Gerenciamento de usuários<br />
-✅ Tela de edição usuário<br />
+✅ Edição individual do usuário<br />
+✅ Envio de e-mail para novos cadastros<br />
+✅ Feedbacks interativos ao usuário<br />
 
 <h3>Futuras 🔧</h3>
 
+- [ ] Responsividade para diferentes dispositivos (em produção 👨‍🔧)
 - [ ] Reset de senha de acesso (em breve ⏳)
-- [ ] Aprovação/reprovação de novos usuários
-- [ ] Aba de Campeonatos
-- [ ] Gerenciador e criador de Campeonatos
+- [ ] Ação de compartilhamento de notícias (em breve ⏳)
+- [ ] Criador e editor de Campeonatos
+- [ ] Tela de campeonatos e equipes
+- [ ] Tela de informações por equipe no perfil do usuário
+- [ ] Ferramenta de aprovação/reprovação de novos cadastros
+- [ ] Tela de listagem de equipes ao Administrador
 - [ ] Integração ao Marketplace
 
 
@@ -75,6 +90,7 @@ Utilizei estas ferramentas para o desenvolvimento do projeto:
 - [Context API](https://legacy.reactjs.org/docs/context.html)
 - [React Carrousel](https://www.npmjs.com/package/react-elastic-carousel)
 - [Node.js](https://nodejs.org/en/)
+- [Python](https://www.python.org/)
 - [Express.js](https://expressjs.com/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Sequelize](https://sequelize.org/)
