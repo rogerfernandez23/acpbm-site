@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
 import Background from '../../assets/background_login.jpg';
+import breakepoints from '../../styles/breakepoints';
 
 const moveBackground = keyframes`
   0% {
@@ -23,6 +24,17 @@ export const Container = styled.div`
   align-items: center;
   gap: 100px;
   animation: ${moveBackground} 20s linear infinite;
+
+  @media ${breakepoints.a} {
+    gap: 80px;
+    animation: ${moveBackground} 25s linear infinite;
+  }
+
+  @media ${breakepoints.s} {
+    gap: 50px;
+    flex-direction: column;
+    animation: ${moveBackground} 50s;
+  }
 `;
 
 export const ContainerText = styled.div`
@@ -32,6 +44,14 @@ export const ContainerText = styled.div`
   align-items: center;
   width: 370px;
   text-align: center;
+
+  @media ${breakepoints.a} {
+    margin-left: 30px;
+  }
+
+  @media ${breakepoints.s} {
+    margin-left: 0px;
+  }
 `;
 
 export const ContainerLogin = styled.div`
@@ -45,9 +65,24 @@ export const ContainerLogin = styled.div`
   height: 390px;
   opacity: 0.9;
 
+  @media ${breakepoints.a} {
+    margin-right: 30px;
+    max-width: 290px;
+  }
+
+  @media ${breakepoints.s} {
+    margin-right: 0px;
+  }
+
+  @media ${breakepoints.z} {
+    max-width: 260px;
+    height: 340px;
+  }
+
   form {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -59,6 +94,18 @@ export const Image = styled.img`
 
   &:hover {
     transform: scale(1.05);
+  }
+
+  @media ${breakepoints.a} {
+    width: 240px;
+  }
+
+  @media ${breakepoints.s} {
+    width: 220px;
+  }
+
+  @media ${breakepoints.z} {
+    margin-top: -60px;
   }
 `;
 
@@ -81,6 +128,24 @@ export const Input = styled.input`
     opacity: 0.4;
     color: #ffff;
   }
+
+  @media ${breakepoints.a} {
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  @media ${breakepoints.z} {
+    width: 230px;
+    height: 35px;
+    margin-top: 14px;
+    font-size: 12px;
+    border-radius: 8px;
+
+    &::placeholder {
+      font-size: 12px;
+    }
+  }
 `;
 
 export const Register = styled.a`
@@ -91,6 +156,15 @@ export const Register = styled.a`
   margin-right: 110px;
   margin-top: 14px;
   cursor: default;
+
+  @media ${breakepoints.a} {
+    margin-right: 70px;
+  }
+
+  @media ${breakepoints.z} {
+    font-size: 10px;
+    margin-top: 10px;
+  }
 `;
 
 export const Form = styled.a`
@@ -115,6 +189,17 @@ export const Button = styled.button`
     opacity: 0.9;
     transform: scale(1.02);
   }
+
+  @media ${breakepoints.a} {
+    height: 35px;
+    width: 250px;
+  }
+
+  @media ${breakepoints.z} {
+    height: 30px;
+    width: 230px;
+    border-radius: 8px;
+  }
 `;
 
 export const LabelOneInner = styled.p`
@@ -122,6 +207,18 @@ export const LabelOneInner = styled.p`
   font-family: 'Changa One';
   font-size: 40px;
   cursor: default;
+
+  @media ${breakepoints.a} {
+    font-size: 32px;
+  }
+
+  @media ${breakepoints.s} {
+    font-size: 26px;
+  }
+
+  @media ${breakepoints.z} {
+    font-size: 22px;
+  }
 `;
 
 export const LabelOne = styled.p`
@@ -129,6 +226,18 @@ export const LabelOne = styled.p`
   font-family: 'Changa One';
   font-size: 80px;
   cursor: default;
+
+  @media ${breakepoints.a} {
+    font-size: 64px;
+  }
+
+  @media ${breakepoints.s} {
+    font-size: 48px;
+  }
+
+  @media ${breakepoints.z} {
+    font-size: 38px;
+  }
 `;
 
 export const LabelTwo = styled.p`
@@ -139,6 +248,18 @@ export const LabelTwo = styled.p`
   font-weight: 100;
   margin-top: 5px;
   cursor: default;
+
+  @media ${breakepoints.a} {
+    font-size: 14px;
+  }
+
+  @media ${breakepoints.s} {
+    font-size: 12px;
+  }
+
+  @media ${breakepoints.z} {
+    width: 60%;
+  }
 `;
 
 export const ErrorText = styled.p`
