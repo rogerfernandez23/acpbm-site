@@ -34,6 +34,7 @@ export const Container = styled.div`
     gap: 50px;
     flex-direction: column;
     animation: ${moveBackground} 50s;
+    -webkit-appearance: none;
   }
 `;
 

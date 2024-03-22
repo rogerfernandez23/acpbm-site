@@ -1,32 +1,66 @@
 import Swal from 'sweetalert2';
 
-const showMessage = status => {
-  const Toast = Swal.mixin({
-    toast: true,
-    position: 'top-end',
-    showConfirmButton: false,
-    timer: 2000,
-    timerProgressBar: true
-  });
+const isSmall = window.matchMedia('(max-width: 740px)').matches;
 
-  if (status === 200 || status === 201) {
-    Toast.fire({
-      icon: 'success',
-      iconColor: 'white',
-      title: 'Logado com sucesso!',
-      color: 'white',
-      width: '18em',
-      background: 'green'
+const showMessage = status => {
+  if (isSmall) {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'bottom',
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+      customClass: 'swal-height'
     });
+
+    if (status === 200 || status === 201) {
+      Toast.fire({
+        icon: 'success',
+        iconColor: 'white',
+        title: 'Logado com sucesso!',
+        color: 'white',
+        width: '18em',
+        background: 'green'
+      });
+    } else {
+      Toast.fire({
+        icon: 'warning',
+        iconColor: 'white',
+        title: 'E-mail ou senha incorretos',
+        color: 'white',
+        width: '22em',
+        background: 'red'
+      });
+    }
   } else {
-    Toast.fire({
-      icon: 'warning',
-      iconColor: 'white',
-      title: 'E-mail ou senha incorretos',
-      color: 'white',
-      width: '22em',
-      background: 'red'
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+      customClass: 'swal-height'
     });
+
+    if (status === 200 || status === 201) {
+      Toast.fire({
+        icon: 'success',
+        iconColor: 'white',
+        title: 'Logado com sucesso!',
+        color: 'white',
+        width: '18em',
+        background: 'green'
+      });
+    } else {
+      Toast.fire({
+        icon: 'warning',
+        iconColor: 'white',
+        title: 'E-mail ou senha incorretos',
+        color: 'white',
+        width: '22em',
+        background: 'red'
+      });
+    }
   }
 };
 
