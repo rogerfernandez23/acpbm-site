@@ -2,6 +2,7 @@
 import styled, { keyframes } from 'styled-components';
 
 import Background from '../../assets/background_login.jpg';
+import breakepoints from '../../styles/breakepoints';
 
 const moveBackground = keyframes`
   0% {
@@ -28,6 +29,15 @@ export const Container = styled.div`
     color: white;
     font-family: 'Changa One';
     font-size: 48px;
+
+    @media ${breakepoints.s} {
+      font-size: 36px;
+    }
+
+    @media ${breakepoints.z} {
+      font-size: 32px;
+      animation: ${moveBackground} 50s linear infinite;
+    }
   }
 
   h2 {
@@ -35,6 +45,14 @@ export const Container = styled.div`
     margin: 30px;
     font-family: 'Changa One';
     font-size: 24px;
+
+    @media ${breakepoints.s} {
+      font-size: 20px;
+    }
+
+    @media ${breakepoints.z} {
+      font-size: 16px;
+    }
   }
 
   button {
@@ -52,10 +70,30 @@ export const Container = styled.div`
     &:hover {
       opacity: 0.9;
     }
+
+    @media ${breakepoints.s} {
+      height: 35px;
+      width: 230px;
+      font-size: 18px;
+    }
+
+    @media ${breakepoints.z} {
+      height: 30px;
+      width: 220px;
+      font-size: 16px;
+    }
   }
 
   .logo-fed {
     width: 150px;
+
+    @media ${breakepoints.s} {
+      width: 120px;
+    }
+
+    @media ${breakepoints.z} {
+      width: 100px;
+    }
   }
 
   .insta {

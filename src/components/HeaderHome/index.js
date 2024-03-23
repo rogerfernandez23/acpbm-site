@@ -13,28 +13,40 @@ import User from '../../assets/icon_user.png';
 import Insta from '../../assets/insta_logo.png';
 import Market from '../../assets/marketplace_icon.png';
 import Rules from '../../assets/rules.png';
+import Seta from '../../assets/seta_menu.png';
 import Trophies from '../../assets/trophie.png';
 import Youtube from '../../assets/youtube_logo.png';
 import { useNavigates } from '../../constants/navigates';
 import Doc from '../../docs/regulamento.pdf';
 import { useUser } from '../../hooks/UserContext';
+import MaskMobile from './MaskMobile';
 import { Container, DropHeader, Logo, LinksAcess } from './styles';
 
 function HeaderHome() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [maskMenuMobile, setMaskMenuMobile] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [menuOn, setMenuOn] = useState(false);
   const menuRef = useRef();
   const { userData } = useUser();
-  const { toLogin, toRegister, toFrezze, toLogout } = useNavigates();
+  const { toLogin, toRegister, toFrezze, toLogout, toAdmin, toUsers } =
+    useNavigates();
+
+  const closeMaskMobile = () => {
+    setMaskMenuMobile(false);
+  };
 
   const idHeader = () => {
     if (userData.name) {
       return (
         <>
           <p>Olá, {userData.name}</p>
-          <a className="log-a" href={userData.admin ? '/adm' : '/usuario'}>
+          <a
+            className="log-a"
+            href={userData.admin ? { toAdmin } : { toUsers }}
+          >
             <p className="log" style={{ fontSize: '11px', fontWeight: '500' }}>
-              Acesse seu perfil
+              Acessar seu perfil
             </p>
           </a>
           <button className="button-header" onClick={toLogout}>
@@ -68,11 +80,17 @@ function HeaderHome() {
       }
     };
 
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
     document.addEventListener('mousedown', handleMenu);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
       document.removeEventListener('mousedown', handleMenu);
     };
   }, []);
@@ -148,31 +166,44 @@ function HeaderHome() {
           />
         </a>
       </Logo>
-      <LinksAcess>
-        <a href="https://www.instagram.com/facpbm/" target="blank">
+      {windowWidth >= 740 ? (
+        <LinksAcess>
+          <a href="https://www.instagram.com/facpbm/" target="blank">
+            <img
+              className="insta"
+              src={Insta}
+              alt="instagram"
+              title="Ir ao Instagram"
+            />
+          </a>
+          <a href="https://www.youtube.com/@federacaoacpbm6936" target="blank">
+            <img
+              className="youtube"
+              src={Youtube}
+              alt="youtube"
+              title="Ir ao YouTube"
+            />
+          </a>
           <img
-            className="insta"
-            src={Insta}
-            alt="instagram"
-            title="Ir ao Instagram"
+            className="login"
+            src={User}
+            alt="login-user"
+            title="Acessar ou Cadastrar sua conta"
           />
-        </a>
-        <a href="https://www.youtube.com/@federacaoacpbm6936" target="blank">
+          <div>{idHeader()}</div>
+        </LinksAcess>
+      ) : (
+        <LinksAcess onClick={() => setMaskMenuMobile(true)}>
           <img
-            className="youtube"
-            src={Youtube}
-            alt="youtube"
-            title="Ir ao YouTube"
+            className="login"
+            src={User}
+            alt="login-user"
+            title="Acessar ou Cadastrar sua conta"
           />
-        </a>
-        <img
-          className="login"
-          src={User}
-          alt="login-user"
-          title="Acessar ou Cadastrar sua conta"
-        />
-        <div>{idHeader()}</div>
-      </LinksAcess>
+          <img className="arrow" src={Seta} alt="arrow-select" />
+          {maskMenuMobile && <MaskMobile onClose={closeMaskMobile} />}
+        </LinksAcess>
+      )}
     </Container>
   );
 }

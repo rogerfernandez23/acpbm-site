@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import breakepoints from '../../styles/breakepoints';
+
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -25,6 +27,10 @@ export const Container = styled.div`
     opacity: 1;
   }
 
+  @media ${breakepoints.z} {
+    height: 50px;
+  }
+
   nav {
     position: fixed;
     top: 70px;
@@ -36,6 +42,23 @@ export const Container = styled.div`
     border-radius: 30px;
     background: #fff;
 
+    @media ${breakepoints.b} {
+      width: 220px;
+    }
+
+    @media ${breakepoints.s} {
+      width: 200px;
+      left: 4%;
+      height: 40%;
+    }
+
+    @media ${breakepoints.z} {
+      width: 180px;
+      left: 6%;
+      height: 35%;
+      padding: 20px 15px;
+    }
+
     a {
       margin-left: 10px;
       text-decoration: none;
@@ -43,6 +66,14 @@ export const Container = styled.div`
       font-size: 16px;
       font-weight: 100;
       cursor: pointer;
+
+      @media ${breakepoints.s} {
+        font-size: 14px;
+      }
+
+      @media ${breakepoints.s} {
+        font-size: 12px;
+      }
     }
 
     ul {
@@ -58,6 +89,14 @@ export const Container = styled.div`
       display: flex;
       flex-direction: row;
       transition: transform 0.1s ease-in-out;
+
+      @media ${breakepoints.s} {
+        margin-bottom: 15px;
+      }
+
+      @media ${breakepoints.s} {
+        margin-bottom: 10px;
+      }
 
       &:hover {
         transform: scale(1.05);
@@ -101,6 +140,10 @@ export const DropHeader = styled.div`
       opacity: 0.9;
       transform: scale(1.1);
     }
+
+    @media ${breakepoints.z} {
+      width: 50px;
+    }
   }
 `;
 
@@ -108,6 +151,7 @@ export const Logo = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+
   img {
     width: 35px;
     margin-top: 2px;
@@ -116,6 +160,10 @@ export const Logo = styled.div`
 
     &:hover {
       transform: scale(1.1);
+    }
+
+    @media ${breakepoints.z} {
+      width: 30px;
     }
   }
 `;
@@ -141,6 +189,26 @@ export const LinksAcess = styled.div`
 
   .login {
     width: 32px;
+
+    @media ${breakepoints.s} {
+      width: 36px;
+    }
+
+    @media ${breakepoints.z} {
+      width: 32px;
+    }
+  }
+
+  .arrow {
+    width: 20px;
+    margin-top: 12px;
+    margin-left: -6px;
+    transform: rotate(90deg);
+
+    @media ${breakepoints.z} {
+      width: 18px;
+      margin-left: -8px;
+    }
   }
 
   p {
