@@ -5,7 +5,7 @@ const size = {
   medium: '580px',
   smaller: '740px',
   average: '860px',
-  in: '0px',
+  intermediary: '960px',
   large: '1000px',
   bigger: '1115px'
 };
@@ -16,7 +16,7 @@ const breakepoints = {
   m: `(max-width: ${size.medium})`,
   s: `(max-width: ${size.smaller})`,
   a: `(max-width: ${size.average})`,
-  in: `(max-width: ${size.in})`,
+  i: `(max-width: ${size.intermediary})`,
   l: `(max-width: ${size.large})`,
   b: `(max-width: ${size.bigger})`
 };
