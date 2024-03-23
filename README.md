@@ -24,7 +24,7 @@
 
  <br /><h2>Sobre o Projeto</h2>
 
-<p align="justify">
+<p>
 Este projeto foi desenvolvido seguindo o padrão de arquitetura <b>MVC</b>, com foco em boas práticas de desenvolvimento, possibilitando o crescimento e implantação escalável de novas funcionalidades. O objetivo principal é proporcionar uma melhor experiência ao usuário. Ao adotar o MVC, o código está estruturado de forma organizada, com a separação clara de responsabilidades entre <b>Model</b>, <b>View</b> (frontend) e <b>Controller</b>. Isso facilita a manutenção do código, permitindo a adição de novos recursos de forma eficiente e minimizando o impacto em outras partes do sistema. Dessa forma, o projeto está preparado para evoluir ao longo do tempo, adaptando-se às necessidades dos usuários e futuras ideias que pretendo adicionar, proporcionando uma experiência cada vez mais satisfatória.
 
 Dentro de suas funcionalidades, a ferramenta permite o cadastro e gerenciamento de contas pessoais com autenticação tanto no ambiente frontend (utilizando o [React-Hook-Form](https://react-hook-form.com/)), quanto no backend (utilizando o [Yup](https://www.npmjs.com/package/yup)), reduzindo a incidência de erros ou tentativas de login maliciosas. A escolha dessas ferramentas visa a segurança e a facilidade de uso para os usuários. O tratamento e armazenamento de dados dos usuários são realizados em um banco de dados relacional, utilizando o [PostgreSQL](https://www.postgresql.org/), em conexão com o [Sequelize](https://sequelize.org/). Essa combinação proporciona uma estrutura sólida e confiável para a manipulação de dados, fornecendo uma camada de abstração poderosa e fácil de usar sobre o SQL tradicional.
