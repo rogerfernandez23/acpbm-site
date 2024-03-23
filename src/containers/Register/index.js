@@ -3,7 +3,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/jsx-props-no-spreading */
 import { yupResolver } from '@hookform/resolvers/yup';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
@@ -26,7 +26,7 @@ import {
   ErrorText
 } from './styles';
 import showMessage from './swalConfig';
-import Text from './text';
+import Text from './Text';
 
 function Register() {
   const navigate = useNavigate();
@@ -72,23 +72,41 @@ function Register() {
 
       showMessage(status);
 
-      setTimeout(toHome, 3000);
+      if (!status === 409) {
+        setTimeout(toHome, 3000);
+      }
     } catch (err) {
       showMessage();
     }
   };
 
+  // VIDEO SHOWN OR NOT
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <Container>
-      <ContainerVideo>
-        <ExeVideo />
+      <ContainerVideo width={window.innerWidth}>
+        {windowWidth >= 860 ? <ExeVideo /> : <div />}
         <TextRegister>
           JUNTE-SE AS MAIORES COMPETIÇÕES DO CARTOLA FC SOLICITANDO UMA
           AFILIAÇÃO!
         </TextRegister>
         <Text />
       </ContainerVideo>
-      <ContainerRegister>
+      <ContainerRegister width={window.innerWidth}>
         <BackScreen onClick={toLogin}>
           <ImgBack src={Seta} />
           <BackText>TELA INICIAL</BackText>

@@ -36,7 +36,7 @@ const showMessage = status => {
   Swal.fire({
     position: 'center',
     showConfirmButton: false,
-    width: '35em',
+    width: '20em',
     timer: 1500,
     ...messageConfig
   });

@@ -2,22 +2,22 @@
 const size = {
   mn: '0px',
   small: '430px',
-  smf: '0px',
+  medium: '580px',
   smaller: '740px',
   average: '860px',
   in: '0px',
-  bg: '0px',
-  bigger: '0px'
+  large: '1000px',
+  bigger: '1115px'
 };
 
 const breakepoints = {
   mn: `(max-width: ${size.mn})`,
   z: `(max-width: ${size.small})`,
-  smf: `(max-width: ${size.smf})`,
+  m: `(max-width: ${size.medium})`,
   s: `(max-width: ${size.smaller})`,
   a: `(max-width: ${size.average})`,
   in: `(max-width: ${size.in})`,
-  bg: `(max-width: ${size.bg})`,
+  l: `(max-width: ${size.large})`,
   b: `(max-width: ${size.bigger})`
 };
 

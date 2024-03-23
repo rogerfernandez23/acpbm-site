@@ -1,18 +1,10 @@
 import React from 'react';
 
+import { TextContent } from './styles';
+
 function Text() {
   return (
-    <p
-      style={{
-        color: 'white',
-        width: '80%',
-        fontSize: '20px',
-        fontStyle: 'italic',
-        textAlign: 'justify',
-        marginLeft: '50px',
-        cursor: 'default'
-      }}
-    >
+    <TextContent>
       Tenha acesso ao mundo de ligas, copas e demais interações junto aos mais
       de 100 clubes já filiados.
       <br />
@@ -23,7 +15,7 @@ function Text() {
       <br />
       <br />
       Batalhe e faça do seu clube o melhor de todos!
-    </p>
+    </TextContent>
   );
 }
 
