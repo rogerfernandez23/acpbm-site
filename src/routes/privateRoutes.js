@@ -23,7 +23,7 @@ function RoutePrivate({ children, isAdmin, isUser }) {
     throw new Error();
   }
 
-  return userValid ? children : <Navigate to="/" />;
+  return userValid ? children : <Navigate to="/logout" />;
 }
 
 export default RoutePrivate;

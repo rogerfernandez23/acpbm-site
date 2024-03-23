@@ -170,6 +170,8 @@ export const Register = styled.a`
 export const Form = styled.a`
   color: #ffff;
   opacity: 0.5;
+  cursor: pointer;
+  text-decoration: underline;
 `;
 
 export const Button = styled.button`

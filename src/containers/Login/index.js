@@ -26,7 +26,7 @@ import {
 import showMessage from './swalConfig';
 
 function Login() {
-  const { toUsers, toAdmin, toErrror } = useNavigates();
+  const { toRegister, toUsers, toAdmin, toErrror } = useNavigates();
   const { putUserData } = useUser();
 
   const schema = yup.object().shape({
@@ -109,7 +109,7 @@ function Login() {
           <ErrorText>{errors.password?.message}</ErrorText>
 
           <Register>
-            Não possui cadastro? <Form href="/cadastro">Clique Aqui</Form>
+            Não possui cadastro? <Form onClick={toRegister}>Clique Aqui</Form>
           </Register>
           <Button type="submit">LOGIN</Button>
         </form>

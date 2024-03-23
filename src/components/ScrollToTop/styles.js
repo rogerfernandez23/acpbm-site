@@ -35,7 +35,6 @@ export const ScrollToTopButton = styled.button`
   }
 
   &:hover {
-    opacity: 0.8;
     transform: scale(1.1);
   }
 `;
