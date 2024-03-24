@@ -36,15 +36,20 @@ function HeaderHome() {
     setMaskMenuMobile(false);
   };
 
+  const userProfile = () => {
+    if (userData.admin) {
+      toAdmin();
+    } else {
+      toUsers();
+    }
+  };
+
   const idHeader = () => {
     if (userData.name) {
       return (
         <>
           <p>Olá, {userData.name}</p>
-          <a
-            className="log-a"
-            href={userData.admin ? { toAdmin } : { toUsers }}
-          >
+          <a className="log-a" onClick={userProfile}>
             <p className="log" style={{ fontSize: '11px', fontWeight: '500' }}>
               Acessar seu perfil
             </p>
