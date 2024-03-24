@@ -41,7 +41,7 @@ const noticesConfig = [
     location: 'Bahia, Brazil',
     date: '02/04/2024 16h03',
     subLabel:
-      'Espectativas bastante alinhadas da "nova" velha competição que chega reformulada para este ano.',
+      'Espectativas altas da "nova" velha competição que chega reformulada para este ano.',
     title: 'SUPERLIGA, A NOVIDADE DA TEMPORADA',
     text: 'A chegada da Superliga marca um momento de grande expectativa e especulação no mundo do futebol. Trata-se de uma competição que promete revolucionar o cenário esportivo, trazendo consigo uma série de mudanças e reformulações que impactarão tanto os clubes quanto os torcedores. A ideia por trás da Superliga é criar uma liga de elite, composta pelos maiores e mais poderosos clubes da Europa, onde o nível de competição e a qualidade do futebol serão elevados a um novo patamar. Essa proposta ambiciosa tem dividido opiniões, gerando debates acalorados e controvérsias em todo o mundo.',
     textb:
