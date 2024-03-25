@@ -10,11 +10,15 @@ function FooterComponent() {
   const { toLogin } = useNavigates();
   return (
     <Container>
-      <LogoItens src={LogoFooter} />
+      <div className="image-logo">
+        <LogoItens src={LogoFooter} />
+      </div>
       <ContainerItens>
         <Trophies />
         <TrophiesPart />
-        <Button onClick={toLogin}>ENTRAR</Button>
+        <div className="button-div">
+          <Button onClick={toLogin}>ENTRAR</Button>
+        </div>
       </ContainerItens>
     </Container>
   );

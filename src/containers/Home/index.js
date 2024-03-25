@@ -9,8 +9,8 @@ import Marketplace from '../../components/MarkteplaceBanner';
 import CarouselNotice from '../../components/NoticesCarroussel';
 import ScrollToTop from '../../components/ScrollToTop';
 import Credits from '../../credits';
+import Video from './iFrame/video';
 import { Container } from './styles';
-import Video from './video';
 
 function Home() {
   return (

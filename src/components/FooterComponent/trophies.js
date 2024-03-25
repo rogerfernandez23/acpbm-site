@@ -3,12 +3,13 @@ function Trophies() {
   return (
     <div
       style={{
+        width: '100%',
         color: 'white',
         marginTop: '50px',
         fontWeight: 100
       }}
     >
-      <h1 style={{ fontSize: '16px', textAlign: 'left' }}>CAMPEONATOS</h1>
+      <h1 style={{ fontSize: '100%', textAlign: 'left' }}>CAMPEONATOS</h1>
       <br />
       <p>Superliga</p>
       <p>Liga B</p>

@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import breakepoints from '../../styles/breakepoints';
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,28 +17,89 @@ export const Container = styled.div`
   );
   border-radius: 50px;
   margin-bottom: 100px;
+
+  @media ${breakepoints.i} {
+    width: 80%;
+  }
+
+  @media ${breakepoints.a} {
+    width: 90%;
+  }
 `;
 
 export const ContainerItens = styled.div`
   width: 100%;
   margin-left: 10%;
+
+  @media ${breakepoints.m} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0%;
+  }
 `;
 
 export const Header = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 120px;
+  width: 80%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
 `;
 
 export const ImgLogo = styled.img`
-  width: 500px;
-  margin-left: -5%;
+  width: 300px;
+
+  @media ${breakepoints.b} {
+    width: 250px;
+  }
+
+  @media ${breakepoints.a} {
+    width: 230px;
+  }
+
+  @media ${breakepoints.s} {
+    width: 200px;
+  }
+
+  @media ${breakepoints.m} {
+    width: 140px;
+  }
+
+  @media ${breakepoints.z} {
+    width: 120px;
+  }
 `;
 
 export const Text = styled.p`
-  margin-top: 80px;
   font-family: 'Changa One';
   font-size: 45px;
+
+  @media ${breakepoints.b} {
+    font-size: 40px;
+  }
+
+  @media ${breakepoints.l} {
+    font-size: 36px;
+  }
+
+  @media ${breakepoints.a} {
+    font-size: 32px;
+  }
+
+  @media ${breakepoints.s} {
+    font-size: 24px;
+  }
+
+  @media ${breakepoints.m} {
+    font-size: 18px;
+  }
+
+  @media ${breakepoints.z} {
+    font-size: 14px;
+  }
 `;
 
 export const Button = styled.button`
@@ -54,5 +117,29 @@ export const Button = styled.button`
 
   &:hover {
     opacity: 0.8;
+  }
+
+  @media ${breakepoints.a} {
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  @media ${breakepoints.s} {
+    margin-top: 25px;
+    width: 180px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  @media ${breakepoints.m} {
+    margin-left: 0px;
+  }
+
+  @media ${breakepoints.z} {
+    width: 160px;
+    height: 30px;
+    font-size: 14px;
+    margin-top: 15px;
   }
 `;

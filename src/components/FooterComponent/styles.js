@@ -1,30 +1,49 @@
 import styled from 'styled-components';
 
+import breakepoints from '../../styles/breakepoints';
+
 export const Container = styled.div`
   background-color: black;
-  height: 302px;
+  width: 100%;
+  height: 300px;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  @media ${breakepoints.s} {
+    padding: 25px;
+  }
+
+  .image-logo {
+    display: flex;
+    align-items: center;
+  }
+`;
+
+export const LogoItens = styled.img`
+  width: 200px;
+
+  @media ${breakepoints.s} {
+    width: 160px;
+  }
 `;
 
 export const ContainerItens = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 50px;
-`;
 
-export const LogoItens = styled.img`
-  margin-right: 50px;
-  width: 200px;
-  height: 120px;
-  margin: 80px;
-  margin-left: 280px;
+  .button-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const Button = styled.button`
-  margin-top: 30%;
-  margin-left: 25px;
   height: 30px;
   width: 130px;
   border-radius: 12px;
@@ -38,13 +57,14 @@ export const Button = styled.button`
   &:hover {
     opacity: 0.6;
   }
+
+  @media ${breakepoints.s} {
+    width: 100px;
+    height: 25px;
+    font-size: 14px;
+  }
 `;
 
 export const Text = styled.p`
   color: white;
-`;
-
-export const Footer = styled.div`
-  display: flex;
-  flex-direction: column;
 `;

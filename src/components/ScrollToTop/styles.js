@@ -27,6 +27,7 @@ export const ScrollToTopButton = styled.button`
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
   animation: ${fadeIn} 0.3s ease-out;
+  z-index: 999;
 
   img {
     width: 30px;

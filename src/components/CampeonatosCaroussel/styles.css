@@ -1,3 +1,4 @@
+
 h1 {
     font-family: 'Changa One';
     text-align: center;
@@ -17,7 +18,7 @@ h1 {
     height: 50%;
     object-fit: cover;
     cursor: pointer;
-    transition: transform 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
   }
 
   .swiper-slide img:hover {
@@ -25,6 +26,7 @@ h1 {
   }
   
   .swiper {
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 95%;
@@ -47,6 +49,7 @@ h1 {
     border-radius: 4px;
     margin: 0 10px;
     font-size: 13px;
+
   }
 
   .swiper-pagination-fraction {
@@ -64,4 +67,108 @@ h1 {
   .swiper-button-next:after {
     color: rgb(35, 35, 35);
   }
+
+  @media screen and (max-width: 1000px) {
+
+    .swiper {
+      height: 280px;
+      margin: 0px 30px ;
+    }
+
+    .swiper-slide img {
+      height: 40%;
+    }
+
+    .swiper-button-next:after {
+      font-size: 20px;    
+    }
+
+    .swiper-button-prev:after {
+      font-size: 20px;    
+    }
+  }
+  
+  @media screen and (max-width: 860px) {
+
+    .swiper-slide img {
+      height: 35%;
+    }
+
+    .swiper {
+      height: 250px;
+    }
+
+    .swiper-button-next:after {
+      position: absolute;
+      right: 4%;
+    }
+
+    .swiper-button-prev:after {
+      position: absolute;
+      left: 4%;
+    }
+  }
+
+  @media screen and (max-width: 740px) {
+
+    h1 {
+      font-size: 32px;
+    }
+    
+    .swiper {
+      height: 220px;
+      margin: 0px 20px ;
+    }
+
+
+    .swiper-button-next:after {
+      right: -30%;
+    }
+
+    .swiper-button-prev:after {
+      left: -30%;
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+
+    .swiper {
+      height: 200px;
+      margin: 0px 10px ;
+
+    }
+
+    .swiper-slide img {
+      height: 30%;
+    }
+   
+  }
+
+  @media screen and (max-width: 430px) {
+
+    h1 {
+      font-size: 22px;
+    }
+    
+    
+    .swiper-slide img {
+      height: 35%;
+    }
+
+    .swiper {
+      height: 150px;
+      margin: 0px 10px ;
+      justify-content: initial;
+      align-items: initial;
+    }
+   
+    .swiper-button-next:after {
+      display: none;
+    }
+
+    .swiper-button-prev:after {
+      display: none;
+    }
+  }
+
   

@@ -22,8 +22,7 @@ export const CarouselNotices = styled(Carousel)`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  margin-top: 25px;
+  margin-top: 90px;
   justify-content: center;
   align-items: center;
 
