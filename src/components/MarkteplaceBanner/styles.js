@@ -16,7 +16,7 @@ export const Container = styled.div`
     rgba(255, 255, 255, 0.6) 100%
   );
   border-radius: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
 
   @media ${breakepoints.i} {
     width: 80%;
