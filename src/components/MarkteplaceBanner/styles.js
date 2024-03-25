@@ -25,6 +25,10 @@ export const Container = styled.div`
   @media ${breakepoints.a} {
     width: 90%;
   }
+
+  @media ${breakepoints.s} {
+    margin-bottom: 80px;
+  }
 `;
 
 export const ContainerItens = styled.div`

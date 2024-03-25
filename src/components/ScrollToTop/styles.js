@@ -1,6 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 import styled, { keyframes } from 'styled-components';
 
+import breakepoints from '../../styles/breakepoints';
+
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -29,10 +31,21 @@ export const ScrollToTopButton = styled.button`
   animation: ${fadeIn} 0.3s ease-out;
   z-index: 999;
 
+  @media ${breakepoints.s} {
+    right: 6px;
+    bottom: 15px;
+    width: 35px;
+    height: 35px;
+  }
+
   img {
     width: 30px;
     margin-top: 5px;
     transform: rotate(-90deg);
+
+    @media ${breakepoints.s} {
+      width: 25px;
+    }
   }
 
   &:hover {

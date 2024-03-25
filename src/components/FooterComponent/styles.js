@@ -10,9 +10,15 @@ export const Container = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 20px;
 
   @media ${breakepoints.s} {
     padding: 25px;
+  }
+
+  @media ${breakepoints.m} {
+    gap: 5px;
+    height: 220px;
   }
 
   .image-logo {
@@ -27,14 +33,21 @@ export const LogoItens = styled.img`
   @media ${breakepoints.s} {
     width: 160px;
   }
+
+  @media ${breakepoints.m} {
+    width: 140px;
+  }
 `;
 
 export const ContainerItens = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 50px;
+
+  @media ${breakepoints.m} {
+    gap: 20px;
+  }
 
   .button-div {
     display: flex;
@@ -63,8 +76,8 @@ export const Button = styled.button`
     height: 25px;
     font-size: 14px;
   }
-`;
 
-export const Text = styled.p`
-  color: white;
+  @media ${breakepoints.m} {
+    display: none;
+  }
 `;

@@ -3,8 +3,7 @@ import React from 'react';
 import LogoFooter from '../../assets/logo_footer.png';
 import { useNavigates } from '../../constants/navigates';
 import { Container, ContainerItens, LogoItens, Button } from './styles';
-import Trophies from './trophies';
-import TrophiesPart from './trophiesPart';
+import Trophies from './Texts';
 
 function FooterComponent() {
   const { toLogin } = useNavigates();
@@ -15,7 +14,6 @@ function FooterComponent() {
       </div>
       <ContainerItens>
         <Trophies />
-        <TrophiesPart />
         <div className="button-div">
           <Button onClick={toLogin}>ENTRAR</Button>
         </div>

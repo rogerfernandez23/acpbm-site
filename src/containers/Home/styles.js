@@ -1,6 +1,8 @@
+/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 
-// eslint-disable-next-line import/prefer-default-export
+import breakepoints from '../../styles/breakepoints';
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -10,6 +12,10 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     margin-bottom: 100px;
+
+    @media ${breakepoints.s} {
+      margin-bottom: 50px;
+    }
   }
 
   .banner-market {
