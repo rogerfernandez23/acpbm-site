@@ -43,8 +43,8 @@ function Users() {
         {clubs &&
           clubs.map(club => (
             <>
-              <div className="box-image">
-                <Image key={club.id} src={club.url} />
+              <div key={club.id} className="box-image">
+                <Image src={club.url} />
               </div>
               <div className="box-name">
                 <NameClub>{club.club_name}</NameClub>

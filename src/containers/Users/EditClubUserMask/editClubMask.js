@@ -69,11 +69,6 @@ function EditClubMask({ onClose, clubs }) {
     setInputValue(caseValue);
   };
 
-  const handleFileChange = event => {
-    const selectedFile = event.target.files[0];
-    setFileName(selectedFile?.name);
-  };
-
   return (
     <Container>
       <ContainerItens>
@@ -107,8 +102,9 @@ function EditClubMask({ onClose, clubs }) {
             <input
               type="file"
               accept="image/png"
-              onChange={handleFileChange}
-              {...register('file')}
+              {...register('file', {
+                onChange: value => setFileName(value.target.files[0].name)
+              })}
             />
           </LabelImport>
           <Buttons>

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-// eslint-disable-next-line import/prefer-default-export
+import breakepoints from '../../styles/breakepoints';
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -16,6 +17,12 @@ export const Container = styled.div`
     flex-direction: column;
     margin-top: 100px;
     margin-bottom: 50px;
+
+    @media ${breakepoints.z} {
+      margin-top: 50px;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
   }
 
   .container-data {
@@ -25,9 +32,18 @@ export const Container = styled.div`
     width: 60%;
     margin-bottom: 5px;
 
+    @media ${breakepoints.z} {
+      width: 80%;
+      align-items: center;
+    }
+
     p {
       font-size: 12px;
       font-weight: 400;
+
+      @media ${breakepoints.z} {
+        font-size: 10px;
+      }
     }
   }
 
@@ -39,14 +55,32 @@ export const Container = styled.div`
     &:hover {
       opacity: 0.9;
     }
+
+    @media ${breakepoints.a} {
+      width: 26px;
+      height: 26px;
+    }
+
+    @media ${breakepoints.z} {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   .notice-image {
     width: 60%;
+
+    @media ${breakepoints.z} {
+      width: 80%;
+    }
   }
 
   hr {
     width: 60%;
+
+    @media ${breakepoints.z} {
+      width: 80%;
+    }
   }
 `;
 
