@@ -1,5 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
+import breakepoints from '../../../styles/breakepoints';
+
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -35,6 +37,25 @@ export const ContainerItens = styled.div`
   border-radius: 75px;
   animation: ${fadeIn} 0.3s ease-out;
 
+  @media ${breakepoints.b} {
+    width: 55%;
+    height: 440px;
+  }
+
+  @media ${breakepoints.a} {
+    width: 65%;
+  }
+
+  @media ${breakepoints.s} {
+    width: 75%;
+  }
+
+  @media ${breakepoints.m} {
+    width: 80%;
+    margin-top: 25%;
+    border-radius: 50px;
+  }
+
   form {
     display: flex;
     flex-direction: column;
@@ -47,6 +68,11 @@ export const ContainerItens = styled.div`
     margin-top: 5px;
     font-style: italic;
     margin-bottom: 50px;
+
+    @media ${breakepoints.m} {
+      font-size: 12px;
+      margin-bottom: 30px;
+    }
   }
 `;
 
@@ -54,6 +80,13 @@ export const EditClub = styled.div`
   display: flex;
   flex-direction: row;
   gap: 30px;
+
+  @media ${breakepoints.m} {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
 `;
 
 export const Text = styled.p`
@@ -61,6 +94,11 @@ export const Text = styled.p`
   font-family: 'Changa One';
   color: #a5a5a5;
   margin-bottom: 5px;
+
+  @media ${breakepoints.m} {
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
 `;
 
 export const InputName = styled.input`
@@ -79,6 +117,23 @@ export const InputName = styled.input`
     font-weight: 100;
     color: black;
     opacity: 0.4;
+
+    @media ${breakepoints.z} {
+      font-size: 12px;
+    }
+  }
+
+  @media ${breakepoints.b} {
+    width: 320px;
+  }
+
+  @media ${breakepoints.s} {
+    width: 300px;
+  }
+
+  @media ${breakepoints.z} {
+    width: 250px;
+    font-size: 12px;
   }
 `;
 
@@ -98,6 +153,23 @@ export const InputAbreviate = styled.input`
     font-weight: 100;
     color: black;
     opacity: 0.4;
+
+    @media ${breakepoints.z} {
+      font-size: 12px;
+    }
+  }
+
+  @media ${breakepoints.b} {
+    width: 100px;
+  }
+
+  @media ${breakepoints.s} {
+    width: 80px;
+  }
+
+  @media ${breakepoints.z} {
+    width: 70px;
+    font-size: 12px;
   }
 `;
 
@@ -119,6 +191,11 @@ export const LabelImport = styled.label`
   font-weight: 100;
   padding-left: 10px;
   cursor: pointer;
+
+  @media ${breakepoints.z} {
+    width: 250px;
+    font-size: 14px;
+  }
 
   img {
     width: 15%;
@@ -142,6 +219,11 @@ export const Buttons = styled.div`
   flex-direction: row;
   gap: 50px;
   margin-top: 40px;
+
+  @media ${breakepoints.m} {
+    margin-top: 30px;
+    gap: 20px;
+  }
 `;
 
 export const Cancel = styled.button`
@@ -160,6 +242,19 @@ export const Cancel = styled.button`
     opacity: 0.9;
     transform: scale(1.1);
   }
+
+  @media ${breakepoints.s} {
+    width: 150px;
+  }
+
+  @media ${breakepoints.m} {
+    width: 120px;
+    height: 30px;
+  }
+
+  @media ${breakepoints.z} {
+    font-size: 16px;
+  }
 `;
 
 export const Save = styled.button`
@@ -177,5 +272,18 @@ export const Save = styled.button`
   &:hover {
     opacity: 0.9;
     transform: scale(1.1);
+  }
+
+  @media ${breakepoints.s} {
+    width: 150px;
+  }
+
+  @media ${breakepoints.m} {
+    width: 120px;
+    height: 30px;
+  }
+
+  @media ${breakepoints.z} {
+    font-size: 16px;
   }
 `;

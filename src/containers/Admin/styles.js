@@ -1,6 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 
+import breakepoints from '../../styles/breakepoints';
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,8 +21,27 @@ export const Options = styled.div`
   width: 90%;
   height: 500px;
   margin-top: 30px;
+
+  @media ${breakepoints.l} {
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    padding: 20px;
+  }
+
+  @media ${breakepoints.a} {
+    width: 80%;
+  }
+
+  @media ${breakepoints.z} {
+    width: 90%;
+    border-radius: 50px;
+    margin-top: 20px;
+    gap: 25px;
+  }
 `;
-export const Manager = styled.div`
+
+export const ContainerManager = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,74 +55,35 @@ export const Manager = styled.div`
   &:hover {
     transform: scale(1.05);
   }
-`;
 
-export const Create = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #ededed;
-  border-radius: 50px;
-  width: 20%;
-  height: 425px;
-  transition: transform 0.5s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
+  @media ${breakepoints.l} {
+    width: 60%;
+    height: 280px;
   }
-`;
 
-export const Edit = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #ededed;
-  border-radius: 50px;
-  width: 20%;
-  height: 425px;
-  transition: transform 0.5s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
+  @media ${breakepoints.m} {
+    width: 80%;
   }
-`;
 
-export const Delete = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #ededed;
-  border-radius: 50px;
-  width: 20%;
-  height: 425px;
-  transition: transform 0.5s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
+  @media ${breakepoints.z} {
+    width: 70%;
+    border-radius: 40px;
+    height: 220px;
   }
 `;
 
 export const ImgManager = styled.img`
   width: 180px;
   cursor: pointer;
-`;
 
-export const ImgCreate = styled.img`
-  width: 180px;
-  cursor: pointer;
-`;
+  @media ${breakepoints.l} {
+    width: 140px;
+    margin-top: 10px;
+  }
 
-export const ImgEdit = styled.img`
-  width: 190px;
-  cursor: pointer;
-`;
-
-export const ImgDelete = styled.img`
-  width: 190px;
-  cursor: pointer;
+  @media ${breakepoints.z} {
+    width: 100px;
+  }
 `;
 
 export const ManageButton = styled.button`
@@ -121,62 +103,18 @@ export const ManageButton = styled.button`
   &:hover {
     transform: scale(1.05);
   }
-`;
 
-export const CreateButton = styled.button`
-  width: 180px;
-  height: 30px;
-  margin-top: 30%;
-  border-radius: 14px;
-  background-color: #b22323;
-  color: white;
-  border: none;
-  outline: none;
-  font-family: 'Changa One';
-  font-size: 20px;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
+  @media ${breakepoints.l} {
+    width: 180px;
+    height: 22px;
+    margin-top: 15%;
+    font-size: 16px;
   }
-`;
 
-export const EditButton = styled.button`
-  width: 180px;
-  height: 30px;
-  margin-top: 30%;
-  border-radius: 14px;
-  background-color: #b22323;
-  color: white;
-  border: none;
-  outline: none;
-  font-family: 'Changa One';
-  font-size: 20px;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-`;
-
-export const DeleteButton = styled.button`
-  width: 180px;
-  height: 30px;
-  margin-top: 30%;
-  border-radius: 14px;
-  background-color: #b22323;
-  color: white;
-  border: none;
-  outline: none;
-  font-family: 'Changa One';
-  font-size: 20px;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
+  @media ${breakepoints.z} {
+    width: 160px;
+    border-radius: 8px;
+    font-size: 12px;
   }
 `;
 
@@ -186,4 +124,12 @@ export const Text = styled.p`
   color: gray;
   font-weight: 100;
   margin-top: 12px;
+
+  @media ${breakepoints.l} {
+    margin: 20px 0;
+  }
+
+  @media ${breakepoints.z} {
+    font-size: 14px;
+  }
 `;

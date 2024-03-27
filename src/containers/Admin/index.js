@@ -11,19 +11,10 @@ import EditClubMask from './EditClubScreen/editClubMask';
 import ManagerClubMask from './ManagerClubScreen/managerClubMask';
 import {
   Container,
+  ContainerManager,
   Options,
-  Manager,
   ImgManager,
   ManageButton,
-  Create,
-  ImgCreate,
-  CreateButton,
-  Edit,
-  ImgEdit,
-  EditButton,
-  Delete,
-  ImgDelete,
-  DeleteButton,
   Text
 } from './styles';
 
@@ -44,30 +35,30 @@ function Admin() {
     <Container>
       <HeaderUser style={{ backgroundColor: '#B22323' }} />
       <Options>
-        <Manager>
+        <ContainerManager>
           <ImgManager src={ManagerClubImg} />
           <ManageButton onClick={() => setShowManagerMask(true)}>
             GERENCIAR USUÁRIOS
           </ManageButton>
-        </Manager>
-        <Create>
-          <ImgCreate src={CreateClubImg} />
-          <CreateButton onClick={() => setShowCreateMask(true)}>
+        </ContainerManager>
+        <ContainerManager>
+          <ImgManager src={CreateClubImg} />
+          <ManageButton onClick={() => setShowCreateMask(true)}>
             CRIAR NOVO CLUBE
-          </CreateButton>
-        </Create>
-        <Edit>
-          <ImgEdit src={EditClubImg} />
-          <EditButton onClick={() => setShowEditMask(true)}>
+          </ManageButton>
+        </ContainerManager>
+        <ContainerManager>
+          <ImgManager src={EditClubImg} />
+          <ManageButton onClick={() => setShowEditMask(true)}>
             EDITAR CLUBE
-          </EditButton>
-        </Edit>
-        <Delete>
-          <ImgDelete src={DeleteClubImg} />
-          <DeleteButton onClick={() => setShowDeleteMask(true)}>
+          </ManageButton>
+        </ContainerManager>
+        <ContainerManager>
+          <ImgManager src={DeleteClubImg} />
+          <ManageButton onClick={() => setShowDeleteMask(true)}>
             DELETAR CLUBE
-          </DeleteButton>
-        </Delete>
+          </ManageButton>
+        </ContainerManager>
       </Options>
       <Text>Em breve, mais funcionalidades</Text>
       {showCreateMask && <CreateClubMask onClose={closeMasks} />}
