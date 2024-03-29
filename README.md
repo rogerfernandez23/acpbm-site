@@ -58,10 +58,10 @@ att. Roger Fernandes
 ✅ Edição individual do usuário<br />
 ✅ Envio de e-mail para novos cadastros<br />
 ✅ Feedbacks interativos ao usuário<br />
+✅ Design Responsivo para diferentes dispositivos<br />
 
 <h3>Futuras 🔧</h3>
 
-- [ ] Responsividade para diferentes dispositivos (em produção 👨‍🔧)
 - [ ] Reset de senha de acesso (em breve ⏳)
 - [ ] Ação de compartilhamento de notícias (em breve ⏳)
 - [ ] Criador e editor de Campeonatos
