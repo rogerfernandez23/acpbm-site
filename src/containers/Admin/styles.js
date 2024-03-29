@@ -104,6 +104,10 @@ export const ManageButton = styled.button`
     transform: scale(1.05);
   }
 
+  @media ${breakepoints.b} {
+    width: 180px;
+  }
+
   @media ${breakepoints.l} {
     width: 180px;
     height: 22px;

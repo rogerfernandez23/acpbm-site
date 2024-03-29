@@ -83,7 +83,7 @@ export const Container = styled.div`
     }
 
     li {
-      margin-bottom: 20px;
+      margin-bottom: 22px;
       border-bottom: 1px solid #ccc;
       padding-bottom: 6px;
       display: flex;
