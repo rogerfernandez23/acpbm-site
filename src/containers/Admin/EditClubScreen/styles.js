@@ -1,5 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
+import breakepoints from '../../../styles/breakepoints';
+
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -22,6 +24,11 @@ export const Container = styled.div`
   position: fixed;
   width: 100%;
   min-height: 120%;
+
+  @media ${breakepoints.b} {
+    min-height: 100%;
+    top: 0;
+  }
 `;
 
 export const ContainerTotal = styled.div`
@@ -29,16 +36,30 @@ export const ContainerTotal = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  top: 30px;
   width: 40%;
   height: 490px;
   background-color: #eaeaea;
   border-radius: 60px;
 
+  @media ${breakepoints.b} {
+    width: 60%;
+  }
+
+  @media ${breakepoints.s} {
+    width: 80%;
+  }
+
+  @media ${breakepoints.m} {
+    width: 90%;
+  }
+
   form {
     display: flex;
     flex-direction: column;
+
+    @media ${breakepoints.m} {
+      width: 80%;
+    }
   }
 `;
 
@@ -82,6 +103,10 @@ export const InputName = styled.input`
     color: black;
     opacity: 0.6;
   }
+
+  @media ${breakepoints.m} {
+    width: 100%;
+  }
 `;
 
 export const InputAbreviate = styled.input`
@@ -102,7 +127,12 @@ export const InputAbreviate = styled.input`
     color: black;
     opacity: 0.6;
   }
+
+  @media ${breakepoints.m} {
+    width: 100%;
+  }
 `;
+
 export const LabelImport = styled.label`
   display: flex;
   flex-direction: row;
@@ -144,6 +174,10 @@ export const Buttons = styled.div`
   flex-direction: row;
   gap: 50px;
   margin-top: 40px;
+
+  @media ${breakepoints.m} {
+    gap: 20px;
+  }
 `;
 
 export const Cancel = styled.button`

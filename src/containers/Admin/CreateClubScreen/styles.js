@@ -1,5 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
+import breakepoints from '../../../styles/breakepoints';
+
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -22,6 +24,11 @@ export const Container = styled.div`
   position: fixed;
   width: 100%;
   min-height: 120%;
+
+  @media ${breakepoints.b} {
+    min-height: 100%;
+    top: 0;
+  }
 `;
 
 export const ContainerTotal = styled.div`
@@ -29,12 +36,31 @@ export const ContainerTotal = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  top: 30px;
   width: 40%;
   height: 490px;
   background-color: #eaeaea;
   border-radius: 60px;
+
+  @media ${breakepoints.b} {
+    width: 60%;
+    height: 520px;
+  }
+
+  @media ${breakepoints.s} {
+    width: 80%;
+  }
+
+  @media ${breakepoints.m} {
+    width: 90%;
+    height: 480px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const ContainerItens = styled.div`
@@ -45,13 +71,6 @@ export const ContainerItens = styled.div`
   gap: 20px;
   border-radius: 75px;
   animation: ${fadeIn} 0.3s ease-out;
-
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
 `;
 
 export const Text = styled.p`
@@ -59,6 +78,11 @@ export const Text = styled.p`
   font-family: 'Changa One';
   color: #a5a5a5;
   margin-bottom: 20px;
+
+  @media ${breakepoints.m} {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
 `;
 
 export const InputName = styled.input`
@@ -78,6 +102,14 @@ export const InputName = styled.input`
     color: black;
     opacity: 0.6;
   }
+
+  @media ${breakepoints.m} {
+    width: 80%;
+  }
+
+  @media ${breakepoints.z} {
+    width: 100%;
+  }
 `;
 
 export const InputAbreviate = styled.input`
@@ -96,6 +128,14 @@ export const InputAbreviate = styled.input`
     font-weight: 100;
     color: black;
     opacity: 0.6;
+  }
+
+  @media ${breakepoints.m} {
+    width: 80%;
+  }
+
+  @media ${breakepoints.z} {
+    width: 100%;
   }
 `;
 
@@ -133,6 +173,10 @@ export const LabelImport = styled.label`
     text-align: center;
     color: black;
   }
+
+  @media ${breakepoints.z} {
+    width: 280px;
+  }
 `;
 
 export const Buttons = styled.div`
@@ -140,6 +184,10 @@ export const Buttons = styled.div`
   flex-direction: row;
   gap: 50px;
   margin-top: 20px;
+
+  @media ${breakepoints.m} {
+    gap: 20px;
+  }
 `;
 
 export const Cancel = styled.button`
@@ -158,6 +206,17 @@ export const Cancel = styled.button`
     opacity: 0.9;
     transform: scale(1.1);
   }
+
+  @media ${breakepoints.m} {
+    height: 32px;
+    width: 160px;
+    font-size: 16px;
+  }
+
+  @media ${breakepoints.z} {
+    height: 30px;
+    width: 120px;
+  }
 `;
 
 export const Save = styled.button`
@@ -175,5 +234,16 @@ export const Save = styled.button`
   &:hover {
     opacity: 0.9;
     transform: scale(1.1);
+  }
+
+  @media ${breakepoints.m} {
+    height: 32px;
+    width: 140px;
+    font-size: 16px;
+  }
+
+  @media ${breakepoints.z} {
+    height: 30px;
+    width: 120px;
   }
 `;

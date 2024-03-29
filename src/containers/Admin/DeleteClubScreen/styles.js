@@ -1,5 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
+import breakepoints from '../../../styles/breakepoints';
+
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -22,6 +24,11 @@ export const Container = styled.div`
   position: fixed;
   width: 100%;
   min-height: 120%;
+
+  @media ${breakepoints.b} {
+    min-height: 100%;
+    top: 0;
+  }
 `;
 
 export const ContainerTotal = styled.div`
@@ -34,11 +41,28 @@ export const ContainerTotal = styled.div`
   background-color: #eaeaea;
   border-radius: 40px;
 
+  @media ${breakepoints.b} {
+    width: 60%;
+  }
+
+  @media ${breakepoints.s} {
+    width: 80%;
+  }
+
+  @media ${breakepoints.m} {
+    width: 90%;
+    height: 230px;
+  }
+
   form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media ${breakepoints.m} {
+      width: 90%;
+    }
   }
 `;
 
@@ -57,6 +81,10 @@ export const Text = styled.p`
   font-family: 'Changa One';
   color: #a5a5a5;
   margin-bottom: 20px;
+
+  @media ${breakepoints.m} {
+    font-size: 20px;
+  }
 `;
 
 export const Buttons = styled.div`
@@ -64,6 +92,11 @@ export const Buttons = styled.div`
   flex-direction: row;
   gap: 50px;
   margin-top: 40px;
+
+  @media ${breakepoints.m} {
+    gap: 20px;
+    margin-top: 20px;
+  }
 `;
 
 export const Cancel = styled.button`
@@ -82,6 +115,12 @@ export const Cancel = styled.button`
     opacity: 0.9;
     transform: scale(1.1);
   }
+
+  @media ${breakepoints.m} {
+    height: 30px;
+    width: 140px;
+    font-size: 16px;
+  }
 `;
 
 export const Save = styled.button`
@@ -99,5 +138,11 @@ export const Save = styled.button`
   &:hover {
     opacity: 0.9;
     transform: scale(1.1);
+  }
+
+  @media ${breakepoints.m} {
+    height: 30px;
+    width: 140px;
+    font-size: 16px;
   }
 `;
