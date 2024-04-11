@@ -52,6 +52,7 @@ function Register() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors }
   } = useForm({
     resolver: yupResolver(schema)
@@ -71,6 +72,8 @@ function Register() {
       const { status } = response;
 
       showMessage(status);
+
+      reset();
 
       if (!status === 409) {
         setTimeout(toHome, 3000);
