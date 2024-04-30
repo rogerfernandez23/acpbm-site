@@ -62,7 +62,7 @@ att. Roger Fernandes
 
 <h3>Futuras 🔧</h3>
 
-- [ ] Reset de senha de acesso (em breve ⏳)
+- [ ] Reset de senha de acesso (em produção 🧑‍💻)
 - [ ] Ação de compartilhamento de notícias (em breve ⏳)
 - [ ] Criador e editor de Campeonatos
 - [ ] Tela de campeonatos e equipes
