@@ -1,6 +1,8 @@
 const paths = {
   Home: '/',
   Login: '/login',
+  ForgotPass: '/recuperar-senha',
+  RecoveryPass: '/credentials-confirm',
   Register: '/cadastro',
   Logout: '/logout',
   Alert: '/teste',

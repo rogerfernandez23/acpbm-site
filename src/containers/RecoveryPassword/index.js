@@ -1,40 +1,39 @@
-/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/jsx-props-no-spreading */
 import { yupResolver } from '@hookform/resolvers/yup';
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
-import Logo from '../../assets/logo_site.png';
+import InputOTP from '../../components/InputOTP';
 import { useNavigates } from '../../constants/navigates';
-import { useUser } from '../../hooks/UserContext';
 import api from '../../services/api';
 import {
   Container,
-  ContainerText,
+  ContainerToken,
   ContainerLogin,
   Input,
-  Register,
-  Form,
-  Image,
   Button,
   LabelOne,
-  LabelOneInner,
   LabelTwo,
   ErrorText
 } from './styles';
 import showMessage from './swalConfig';
 
-function Login() {
-  const { toRegister, toUsers, toAdmin, toErrror, toForgot } = useNavigates();
-  const { putUserData } = useUser();
+function RecoveryPassword() {
+  const { toLogin } = useNavigates();
+  const [valueToken, setValueToken] = useState('');
+
+  const refreshToken = value => {
+    setValueToken(value);
+  };
 
   const schema = yup.object().shape({
     email: yup.string().email('Digite um e-mail válido').required(' '),
-    password: yup
+    password: yup.string().required(' ').min(6, 'Deve ter mais de 6 dígitos'),
+    confirmPassword: yup
       .string()
       .required(' ')
-      .min(6, 'A senha deve ter no mínimo, 6 dígitos')
+      .oneOf([yup.ref('password')], 'As senhas não são iguais')
   });
 
   const {
@@ -47,31 +46,21 @@ function Login() {
 
   const onSubmit = async dataUser => {
     try {
-      const response = await api.post(
-        'login',
+      const { status } = await api.patch(
+        '/savepass',
         {
+          token: valueToken,
           email: dataUser.email,
           password: dataUser.password
         },
         { validateStatus: () => true }
       );
 
-      const { data } = response;
-      const { status } = response;
-
       showMessage(status);
 
-      if (status === 200 || status === 201) {
+      if (status === 200) {
         setTimeout(() => {
-          if (data.admin) {
-            toAdmin();
-            putUserData(data);
-          } else if (!data.club_id) {
-            toErrror();
-          } else {
-            toUsers();
-            putUserData(data);
-          }
+          toLogin();
         }, 3000);
       }
     } catch (err) {
@@ -81,20 +70,16 @@ function Login() {
 
   return (
     <Container>
-      <ContainerText>
-        <LabelOneInner>O MELHOR DA MAIOR</LabelOneInner>
-        <LabelOne>FEDERAÇÃO</LabelOne>
-        <LabelTwo>
-          Acesse seu perfil e acompanhe notícias, campeonatos e demais
-          informações!
-        </LabelTwo>
-      </ContainerText>
+      <ContainerToken>
+        <LabelOne>REDEFINIR SENHA</LabelOne>
+        <LabelTwo>Insira o código enviado ao seu email:</LabelTwo>
+        <InputOTP tokenValue={refreshToken} />
+      </ContainerToken>
       <ContainerLogin>
-        <Image src={Logo} alt="logo-da-federacao" />
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
           <Input
             type="email"
-            placeholder="Informe seu e-mail"
+            placeholder="Confirme seu e-mail"
             {...register('email')}
             error={errors.email?.message}
           />
@@ -102,24 +87,25 @@ function Login() {
 
           <Input
             type="password"
-            placeholder="Informe sua senha"
+            placeholder="Defina sua nova senha"
             {...register('password')}
             error={errors.password?.message}
           />
           <ErrorText>{errors.password?.message}</ErrorText>
 
-          <Register>
-            Não possui cadastro? <Form onClick={toRegister}>Clique Aqui</Form>
-          </Register>
-          <Register>
-            <Form onClick={toForgot}>Esqueci minha Senha</Form>
-          </Register>
+          <Input
+            type="password"
+            placeholder="Confirme sua nova senha"
+            {...register('confirmPassword')}
+            error={errors.confirmPassword?.message}
+          />
+          <ErrorText>{errors.confirmPassword?.message}</ErrorText>
 
-          <Button type="submit">LOGIN</Button>
+          <Button type="submit">CADASTRAR</Button>
         </form>
       </ContainerLogin>
     </Container>
   );
 }
 
-export default Login;
+export default RecoveryPassword;

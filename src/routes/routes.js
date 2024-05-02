@@ -5,10 +5,12 @@ import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 import paths from '../constants/paths';
 import Admin from '../containers/Admin';
 import ErrorLogin from '../containers/ErrorLogin';
+import ForgotPassword from '../containers/ForgotPassword';
 import Home from '../containers/Home';
 import Login from '../containers/Login';
 import LogoutScreen from '../containers/LogoutScreen';
 import NoticeRead from '../containers/NoticeRead';
+import RecoveryPassword from '../containers/RecoveryPassword';
 import Register from '../containers/Register';
 import ScreenAlert from '../containers/ScreenAlert';
 import Users from '../containers/Users';
@@ -23,6 +25,8 @@ function AppRoutes() {
         <Route path={paths.Error} element={<ErrorLogin />} />
         <Route exact path={paths.Home} element={<Home />} />
         <Route path={paths.Login} element={<Login />} />
+        <Route path={paths.ForgotPass} element={<ForgotPassword />} />
+        <Route path={paths.RecoveryPass} element={<RecoveryPassword />} />
         <Route path={paths.Register} element={<Register />} />
         <Route path={paths.Logout} element={<LogoutScreen />} />
         <Route path={paths.Alert} element={<ScreenAlert />} />
