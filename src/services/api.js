@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const apiConection = axios.create({
-  baseURL: 'acpbm-site-backend-production.up.railway.app'
+  baseURL: 'https://acpbm-site-backend-production.up.railway.app'
 });
 
 apiConection.interceptors.request.use(async config => {
