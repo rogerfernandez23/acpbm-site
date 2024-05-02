@@ -59,10 +59,10 @@ att. Roger Fernandes
 ✅ Envio de e-mail para novos cadastros<br />
 ✅ Feedbacks interativos ao usuário<br />
 ✅ Design Responsivo para diferentes dispositivos<br />
+✅ Reset de senha de acesso [NOVO]<br /> 
 
 <h3>Futuras 🔧</h3>
 
-- [ ] Reset de senha de acesso (em produção 🧑‍💻)
 - [ ] Ação de compartilhamento de notícias (em breve ⏳)
 - [ ] Criador e editor de Campeonatos
 - [ ] Tela de campeonatos e equipes
