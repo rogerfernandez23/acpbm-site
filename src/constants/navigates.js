@@ -40,6 +40,10 @@ export function useNavigates() {
     window.location.reload();
   };
 
+  const toForgot = () => {
+    navigate('/recuperar-senha');
+  };
+
   return {
     toHome,
     toUsers,
@@ -48,6 +52,7 @@ export function useNavigates() {
     toRegister,
     toLogin,
     toErrror,
-    toLogout
+    toLogout,
+    toForgot
   };
 }

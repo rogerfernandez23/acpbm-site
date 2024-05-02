@@ -57,6 +57,7 @@ function Register() {
   } = useForm({
     resolver: yupResolver(schema)
   });
+
   const onSubmit = async dataUser => {
     try {
       const response = await api.post(

@@ -19,10 +19,10 @@ export const Container = styled.div`
   background-image: url(${Background});
   min-height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 100px;
+  gap: 40px;
   animation: ${moveBackground} 20s linear infinite;
 
   @media ${breakepoints.a} {
@@ -37,12 +37,12 @@ export const Container = styled.div`
   }
 `;
 
-export const ContainerText = styled.div`
+export const ContainerToken = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 370px;
+  width: 80%;
   text-align: center;
 
   @media ${breakepoints.a} {
@@ -50,6 +50,7 @@ export const ContainerText = styled.div`
   }
 
   @media ${breakepoints.s} {
+    width: 90%;
     margin-left: 0px;
   }
 `;
@@ -62,7 +63,7 @@ export const ContainerLogin = styled.div`
   background-color: #0e0e0e;
   border-radius: 25px;
   width: 320px;
-  height: 420px;
+  height: 320px;
   opacity: 0.9;
 
   @media ${breakepoints.a} {
@@ -83,29 +84,6 @@ export const ContainerLogin = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-`;
-
-export const Image = styled.img`
-  width: 280px;
-  margin-top: -40px;
-  cursor: pointer;
-  transition: transform 0.8s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  @media ${breakepoints.a} {
-    width: 240px;
-  }
-
-  @media ${breakepoints.s} {
-    width: 220px;
-  }
-
-  @media ${breakepoints.z} {
-    margin-top: -60px;
   }
 `;
 
@@ -148,31 +126,6 @@ export const Input = styled.input`
   }
 `;
 
-export const Register = styled.a`
-  margin-top: 5px;
-  font-size: 12px;
-  font-weight: 100;
-  color: #ffff;
-  margin-top: 14px;
-  cursor: default;
-
-  @media ${breakepoints.a} {
-    margin-right: 70px;
-  }
-
-  @media ${breakepoints.z} {
-    font-size: 10px;
-    margin-top: 10px;
-  }
-`;
-
-export const Form = styled.a`
-  color: #ffff;
-  opacity: 0.6;
-  cursor: pointer;
-  text-decoration: underline;
-`;
-
 export const Button = styled.button`
   margin-top: 35px;
   height: 40px;
@@ -203,41 +156,22 @@ export const Button = styled.button`
   }
 `;
 
-export const LabelOneInner = styled.p`
-  color: white;
-  font-family: 'Changa One';
-  font-size: 40px;
-  cursor: default;
-
-  @media ${breakepoints.a} {
-    font-size: 32px;
-  }
-
-  @media ${breakepoints.s} {
-    font-size: 26px;
-  }
-
-  @media ${breakepoints.z} {
-    font-size: 22px;
-  }
-`;
-
 export const LabelOne = styled.p`
   color: white;
   font-family: 'Changa One';
-  font-size: 80px;
+  font-size: 42px;
   cursor: default;
 
   @media ${breakepoints.a} {
-    font-size: 64px;
+    font-size: 38px;
   }
 
   @media ${breakepoints.s} {
-    font-size: 48px;
+    font-size: 32px;
   }
 
   @media ${breakepoints.z} {
-    font-size: 38px;
+    font-size: 26px;
   }
 `;
 

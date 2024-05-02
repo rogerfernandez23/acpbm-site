@@ -19,19 +19,16 @@ export const Container = styled.div`
   background-image: url(${Background});
   min-height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 100px;
   animation: ${moveBackground} 20s linear infinite;
 
   @media ${breakepoints.a} {
-    gap: 80px;
     animation: ${moveBackground} 25s linear infinite;
   }
 
   @media ${breakepoints.s} {
-    gap: 50px;
     flex-direction: column;
     animation: ${moveBackground} 50s;
   }
@@ -42,7 +39,7 @@ export const ContainerText = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 370px;
+  width: 80%;
   text-align: center;
 
   @media ${breakepoints.a} {
@@ -62,7 +59,8 @@ export const ContainerLogin = styled.div`
   background-color: #0e0e0e;
   border-radius: 25px;
   width: 320px;
-  height: 420px;
+  height: 340px;
+  margin-top: 30px;
   opacity: 0.9;
 
   @media ${breakepoints.a} {
@@ -156,19 +154,15 @@ export const Register = styled.a`
   margin-top: 14px;
   cursor: default;
 
-  @media ${breakepoints.a} {
-    margin-right: 70px;
-  }
-
   @media ${breakepoints.z} {
-    font-size: 10px;
+    font-size: 11px;
     margin-top: 10px;
   }
 `;
 
 export const Form = styled.a`
   color: #ffff;
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: pointer;
   text-decoration: underline;
 `;
@@ -203,41 +197,22 @@ export const Button = styled.button`
   }
 `;
 
-export const LabelOneInner = styled.p`
-  color: white;
-  font-family: 'Changa One';
-  font-size: 40px;
-  cursor: default;
-
-  @media ${breakepoints.a} {
-    font-size: 32px;
-  }
-
-  @media ${breakepoints.s} {
-    font-size: 26px;
-  }
-
-  @media ${breakepoints.z} {
-    font-size: 22px;
-  }
-`;
-
 export const LabelOne = styled.p`
   color: white;
   font-family: 'Changa One';
-  font-size: 80px;
+  font-size: 42px;
   cursor: default;
 
   @media ${breakepoints.a} {
-    font-size: 64px;
+    font-size: 40px;
   }
 
   @media ${breakepoints.s} {
-    font-size: 48px;
+    font-size: 34px;
   }
 
   @media ${breakepoints.z} {
-    font-size: 38px;
+    font-size: 28px;
   }
 `;
 
