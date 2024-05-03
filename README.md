@@ -64,6 +64,7 @@ att. Roger Fernandes
 <h3>Futuras 🔧</h3>
 
 - [ ] Ação de compartilhamento de notícias (em breve ⏳)
+- [ ] Login e Cadastro com contas Google (em breve ⏳)
 - [ ] Criador e editor de Campeonatos
 - [ ] Tela de campeonatos e equipes
 - [ ] Tela de informações por equipe no perfil do usuário
