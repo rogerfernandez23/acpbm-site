@@ -6,7 +6,7 @@ export default createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Changa One', 'Freeman';
+        font-family: 'Changa One';
         font-family: 'Roboto';
     }
 
