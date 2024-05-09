@@ -156,10 +156,6 @@ export const Register = styled.a`
   margin-top: 14px;
   cursor: default;
 
-  @media ${breakepoints.a} {
-    margin-right: 70px;
-  }
-
   @media ${breakepoints.z} {
     font-size: 10px;
     margin-top: 10px;
