@@ -90,6 +90,5 @@ export const Nav = styled.p`
 `;
 
 export const Button = styled.button`
-  background-color: none;
-  border: none;
+  display: none;
 `;
