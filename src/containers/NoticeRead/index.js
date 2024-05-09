@@ -11,11 +11,12 @@ import { Notices, TextNotice, TextSub } from '../../components/Notices';
 import noticesConfig from '../../components/NoticesCarroussel/contents/configNotices';
 import ScrollToTop from '../../components/ScrollToTop';
 import Credits from '../../credits';
-import { Container } from './styles';
+import { Container, Button } from './styles';
 
 function NoticeRead() {
   const { id } = useParams();
   const notice = noticesConfig.find(not => not.id === parseInt(id));
+  const shareLink = `https://facpbm.netlify.app/noticia/${id}`
 
   return (
     <Container>
@@ -33,7 +34,18 @@ function NoticeRead() {
                 <p><b>{notice.author}</b> - {notice.location}</p>
                 <p>{notice.date}</p>
               </div>
-              <img className="image-share" src={Share} alt='compartilhar' title='Compartilhar notícia'/>
+              <Button
+               onClick={
+                () => { 
+                  navigator.share({
+                   title: 'Share', 
+                   text: 'whatevs',                     
+                   url: shareLink
+                  }
+                )}
+                }>
+                <img className="image-share" src={Share} alt='compartilhar' title='Compartilhar notícia'/>
+              </Button>
             </div>
             <hr />
             <TextNotice>{notice.text}</TextNotice>

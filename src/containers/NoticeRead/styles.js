@@ -88,3 +88,8 @@ export const Nav = styled.p`
   display: flex;
   flex-direction: column;
 `;
+
+export const Button = styled.button`
+  background-color: none;
+  border: none;
+`;
