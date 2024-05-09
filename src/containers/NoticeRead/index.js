@@ -16,8 +16,15 @@ import { Container, Button } from './styles';
 function NoticeRead() {
   const { id } = useParams();
   const notice = noticesConfig.find(not => not.id === parseInt(id));
-  const shareLink = `https://facpbm.netlify.app/noticia/${id}`
-
+  const shareLink = `https://facpbm.netlify.app/noticia/${id}`;
+  
+  const share = () => {
+    navigator.share({
+      title: notice.title, 
+      text: notice.subLabel,
+      url: shareLink
+    })
+  }
   return (
     <Container>
       <HeaderHome />
@@ -34,16 +41,7 @@ function NoticeRead() {
                 <p><b>{notice.author}</b> - {notice.location}</p>
                 <p>{notice.date}</p>
               </div>
-              <Button
-               onClick={
-                () => { 
-                  navigator.share({
-                   title: 'Share', 
-                   text: 'whatevs',                     
-                   url: shareLink
-                  }
-                )}
-                }>
+              <Button onClick={share}>
                 <img className="image-share" src={Share} alt='compartilhar' title='Compartilhar notícia'/>
               </Button>
             </div>
