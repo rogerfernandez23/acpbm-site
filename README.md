@@ -60,10 +60,11 @@ att. Roger Fernandes
 ✅ Feedbacks interativos ao usuário<br />
 ✅ Design Responsivo para diferentes dispositivos<br />
 ✅ Reset de senha de acesso [NOVO]<br /> 
+✅ Ação de compartilhamento de notícias [NOVO]<br /> 
+
 
 <h3>Futuras 🔧</h3>
 
-- [ ] Ação de compartilhamento de notícias (em desenvolvimento 🧑‍💻)
 - [ ] Login e Cadastro com contas Google (em breve ⏳)
 - [ ] Criador e editor de Campeonatos
 - [ ] Tela de campeonatos e equipes
