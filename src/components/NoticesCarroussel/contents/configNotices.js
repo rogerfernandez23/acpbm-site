@@ -26,7 +26,7 @@ const noticesConfig = [
     location: 'Bahia, Brazil',
     date: '02/04/2024 16h03',
     subLabel:
-      'Em breve, teremos o tão esperado guia desta temporada onde poderemos prever o que esperar de cada equipe.',
+      'Em breve o tão esperado guia desta temporada para prever o que esperar de cada equipe.',
     title: 'QUEM É FAVORITO?',
     text: 'À medida que nos aproximamos do início da temporada, surge a pergunta inevitável: quem será o favorito? Os fãs fervorosos do esporte estão ansiosos para descobrir quais equipes estarão no topo da hierarquia este ano. E é nesse contexto que aguardamos com grande expectativa o tão esperado guia da temporada, uma ferramenta essencial para todos os aficionados por esportes. O guia da temporada é mais do que apenas uma lista de times e estatísticas; é um mapa para o futuro, uma visão sobre o que podemos esperar de cada equipe. Ele nos dá insights valiosos sobre os pontos fortes e fracos de cada time, as contratações importantes que foram feitas, as estratégias táticas que serão adotadas e as previsões sobre o desempenho geral.',
     textb:
