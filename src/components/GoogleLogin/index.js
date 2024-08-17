@@ -1,19 +1,17 @@
 import { gapi } from 'gapi-script';
 import React, { useEffect } from 'react';
 import GoogleLogin from 'react-google-login';
-import { useNavigate } from 'react-router-dom';
 
+import { useNavigates } from '../../constants/navigates';
+import { useUser } from '../../hooks/UserContext';
 import api from '../../services/api';
 import showMessage from './swalConfig';
 
 function GoogleLoginRender() {
-  const navigate = useNavigate();
+  const { toUsers, toAdmin, toErrror } = useNavigates();
+  const { putUserData } = useUser();
   const clientID =
     '984781473130-n4aclf87adevrj0q6r6077l5okv4fa4r.apps.googleusercontent.com';
-
-  const toHome = () => {
-    navigate('/');
-  };
 
   useEffect(() => {
     const login = () => {
@@ -26,8 +24,8 @@ function GoogleLoginRender() {
   }, []);
 
   const onSuccess = async response => {
-    const data = await api.post(
-      'register',
+    const dataRequest = await api.post(
+      'login/google',
       {
         name: response.profileObj.name,
         email: response.profileObj.email,
@@ -36,12 +34,23 @@ function GoogleLoginRender() {
       { validateStatus: () => true }
     );
 
-    const { status } = data;
+    const { data } = dataRequest;
+    const { status } = dataRequest;
 
     showMessage(status);
 
-    if (!status === 409) {
-      setTimeout(toHome, 3000);
+    if (status === 200 || status === 201) {
+      setTimeout(() => {
+        if (data.admin) {
+          toAdmin();
+          putUserData(data);
+        } else if (!data.club_id) {
+          toErrror();
+        } else {
+          toUsers();
+          putUserData(data);
+        }
+      }, 3000);
     }
   };
 
