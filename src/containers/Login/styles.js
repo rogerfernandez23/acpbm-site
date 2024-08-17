@@ -62,7 +62,7 @@ export const ContainerLogin = styled.div`
   background-color: #0e0e0e;
   border-radius: 25px;
   width: 320px;
-  height: 420px;
+  height: 500px;
   opacity: 0.9;
 
   @media ${breakepoints.a} {
@@ -170,7 +170,7 @@ export const Form = styled.a`
 `;
 
 export const Button = styled.button`
-  margin-top: 35px;
+  margin: 25px 0;
   height: 40px;
   width: 280px;
   border-radius: 12px;

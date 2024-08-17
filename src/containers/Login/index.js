@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
 import Logo from '../../assets/logo_site.png';
+import GoogleLoginRender from '../../components/GoogleLogin';
 import { useNavigates } from '../../constants/navigates';
 import { useUser } from '../../hooks/UserContext';
 import api from '../../services/api';
@@ -117,6 +118,16 @@ function Login() {
 
           <Button type="submit">LOGIN</Button>
         </form>
+        <hr
+          style={{
+            width: '270px',
+            marginBottom: '25px',
+            border: 'none',
+            height: '0.2px',
+            backgroundColor: '#575757'
+          }}
+        />
+        <GoogleLoginRender />
       </ContainerLogin>
     </Container>
   );
