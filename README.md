@@ -66,7 +66,7 @@ att. Roger Fernandes
 
 <h3>Futuras 🔧</h3>
 
-- [ ] Criador e editor de Campeonatos
+- [ ] Criador e editor de Campeonatos [EM DESENVOLVIMENTO ⚙️]
 - [ ] Tela de campeonatos e equipes
 - [ ] Tela de informações por equipe no perfil do usuário
 - [ ] Ferramenta de aprovação/reprovação de novos cadastros
